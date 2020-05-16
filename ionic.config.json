@@ -1,5 +1,7 @@
 {
-  "name": "on-stage-setlist-mobile",
-  "integrations": {},
+  "name": "my-band-mobile-client",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,1 +1,0 @@
-run with ionic serve
