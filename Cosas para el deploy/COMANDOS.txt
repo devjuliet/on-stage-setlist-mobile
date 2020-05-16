@@ -1,0 +1,67 @@
+ Comando para poder compilar la app y mandarla a un dispositivo conectado
+        >> ionic cordova run android --device
+
+Ver la lista de dispositivos disponibles conectados
+        >> adb devices
+
+Comando para compilar en tiempo real al celular
+        >> ionic cordova run android -l
+
+Comando para crear la app para produccion (archivo apk)
+        >> ionic cordova build android --prod --release
+
+Comando para crear los recursos como la imagen de icono o el splash scree
+        >> ionic cordova resources
+
+Comando para hacer la build para subir a web en la carpeta www
+        >> ionic build --prod
+        
+Comando para resetar el servidor apache para node
+        >> pkill -9 Passenger
+
+Comando para crear los App Bundle (archivos aab) dentro de la carpeta de platforms
+        >> ./grandlew bundle
+
+LA CONTRASEÑA PARA EL ALMACEN DE CONTRASEÑAS DEBE SER "android" POR REQUERIMIENTO DE APIS
+
+Comando que se uso para crear la key para FACEBOOK
+        >> keytool -exportcert -alias face-enbi-debug -keystore /home/hipsy/Programs/hashFace | openssl sha1 -binary | openssl base64
+
+        resultado Ymr8dnWa0Df7uyq5sOjYfElDc1M=
+
+        PARA EL DEBUG t/XwuG/db90+g9ZjIe3ADh1vw6Q=
+
+        >> keytool -exportcert -alias release-key -keystore ../.android/keyandroidstore | openssl sha1 -binary | openssl base64
+        resultado jUjepvXt81/O8ApuqTuVdzoOlfE=
+        PARA LA DE PRODUCCION 1aWt8IyfRgVdrnxNo67ac9dTMbg=
+        
+
+Asi se obtuvo y guardo el key de la lap llamado debug
+
+        >> keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+
+        resultado qbVxOyyMZIx6QIq4XGpeX0WxgbE=
+
+Asi se obtuvo y guardo el key de la lap llamado release
+
+        >> keytool -genkey -v -keystore ~/.android/release-key.keystore -alias release-key -keyalg RSA -keysize 2048 -validity 10000
+
+        resultado azhkiEmjvEeB5AJxsTMNzhOW34E=
+
+Comando para instalar el plugin de inicio de face
+        >> ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID="1407938022714783" --variable APP_NAME="Enbibo"
+
+con esto se ven las key(firmas de algun almacen de keys)
+        >> keytool -v -list -keystore ~/.android/debug.keystore 
+
+Comando para firmar las apps sin firmar
+        >> jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.android/release-key.keystore enbibo-release-unsigned-1-0-0.apk release-key
+        >> jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.android/release-key.keystore app.aab release-key
+Comando para optimizar la app
+        >> /home/hipsy/Programs/Android/sdk/build-tools/29.0.2/zipalign -v 4 enbibo-release-signed-1-0-0.apk Enbibo_release_1-0-0.apk
+        >> /home/hipsy/Programs/Android/sdk/build-tools/29.0.2/zipalign -v 4 app.aab Enbibo_release_1-0-15.aab
+
+Con esto se creo el certificado para los Android App Bundle
+
+java -jar pepk.jar --keystore=../.android/release-key.keystore --alias=release-key --output=../.android/keyandroidstore --encryptionkey=eb10fe8f7c7c9df715022017b00c6471f8ba8170b13049a11e6c09ffe3056a104a3bbe4ac5a955f4ba4fe93fc8cef27558a3eb9d2a529a2092761fb833b656cd48b9de6a
+
