@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./views/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'options',
+    loadChildren: () => import('./views/options/options.module').then( m => m.OptionsPageModule)
   }
 
 ];
