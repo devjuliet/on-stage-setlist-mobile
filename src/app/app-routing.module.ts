@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'options',
     loadChildren: () => import('./views/options/options.module').then( m => m.OptionsPageModule)
+  },
+  {
+    path: 'playlist',
+    loadChildren: () => import('./views/playlist/playlist.module').then( m => m.PlaylistPageModule)
   }
 
 ];
