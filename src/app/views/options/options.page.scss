@@ -1,0 +1,31 @@
+.centrito{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #877EB4;
+    border: 2px solid #877EB4;
+    color: white;
+}
+.image-cont{
+   
+    display: flex;
+    justify-content: center;
+    top: 80px;
+    z-index: 2;
+
+}
+
+.ay{
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #877EB4;
+    color: white;
+}
