@@ -26,15 +26,35 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
+.sc-ion-input-ios-h, .sc-ion-input-md-h{
+    background-color: white;
+    height: 2.5em;
+    border-radius: 10px;
+    font-family: 'Questrial', sans-serif;
+    color: #353535;
+    padding-left: .5em !important;
+    width: 80%;
+    margin: auto;
+    --padding-start: 10px;
+    transform: none;
+}
+/*Botones*/
+ion-button {
+    text-transform: none;
+}
+/*Letras*/
 
-.sc-ion-input-md-h{
-    background: white;
-    --color: #000000;
-    position: relative;
-    flex: 1;
-    align-items: center;
-    width: 100%;
-    padding: 0 !important;
-    font-family: var(--ion-font-family, inherit);
-    z-index: 2;
+
+.fira-1-wht{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1em;
+    color: white;
+}
+.ques-30-bl{
+    font-family: 'Questrial', sans-serif;
+}
+/*PADDINGS*/
+
+.p-b-20{
+    padding-bottom: 20px;
 }
