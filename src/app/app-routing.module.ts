@@ -7,6 +7,10 @@ const routes: Routes = [
   { path: 'register', loadChildren: () => import('./views/register/register.module').then(m => m.RegisterPageModule) },
   { path: 'splash-screen', loadChildren: () => import('./views/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule) },
   { path: 'dashboard', loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardPageModule)},
+  {
+    path: 'events',
+    loadChildren: () => import('./views/events/events.module').then( m => m.EventsPageModule)
+  }
 ];
 @NgModule({
   imports: [
