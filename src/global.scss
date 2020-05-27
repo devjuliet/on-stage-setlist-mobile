@@ -38,6 +38,9 @@
     --padding-start: 10px;
     transform: none;
 }
+.text-al{
+    text-align: center;
+}
 /*Botones*/
 ion-button {
     text-transform: none;
@@ -64,6 +67,11 @@ ion-button {
     font-size: 1.5em;
     color: white;
 }
+.fira-2-bl{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 2em;
+    color: #382983;
+}
 .ques-30-bl{
     font-family: 'Questrial', sans-serif;
 }
@@ -73,7 +81,6 @@ ion-button {
     font-family: 'Questrial', sans-serif;
 }
 /*PADDINGS*/
-
-.p-b-20{
-    padding-bottom: 20px;
+.p-t-8e{
+    padding-top: 8em;
 }
