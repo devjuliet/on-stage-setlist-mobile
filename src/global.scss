@@ -24,3 +24,56 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.sc-ion-input-ios-h, .sc-ion-input-md-h{
+    background-color: white;
+    height: 2.5em;
+    border-radius: 10px;
+    font-family: 'Questrial', sans-serif;
+    color: #353535;
+    padding-left: .5em !important;
+    width: 80%;
+    margin: auto;
+    --padding-start: 10px;
+    transform: none;
+}
+/*Botones*/
+ion-button {
+    text-transform: none;
+}
+.blu-quest{
+    --background: #0087D1;
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    --border-radius: 20px;
+    height: 50px;
+    width: 180px;
+    font-size: 1em;
+}
+/*Letras*/
+
+
+.fira-1-wht{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1em;
+    color: white;
+}
+.fira-15-wht{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5em;
+    color: white;
+}
+.ques-30-bl{
+    font-family: 'Questrial', sans-serif;
+}
+.ques-10-wht{
+    font-size: 10px !important;
+    color: white;
+    font-family: 'Questrial', sans-serif;
+}
+/*PADDINGS*/
+
+.p-b-20{
+    padding-bottom: 20px;
+}
