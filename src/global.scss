@@ -42,6 +42,15 @@
 ion-button {
     text-transform: none;
 }
+.blu-quest{
+    --background: #0087D1;
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    --border-radius: 20px;
+    height: 50px;
+    width: 180px;
+    font-size: 1em;
+}
 /*Letras*/
 
 
@@ -50,7 +59,17 @@ ion-button {
     font-size: 1em;
     color: white;
 }
+.fira-15-wht{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5em;
+    color: white;
+}
 .ques-30-bl{
+    font-family: 'Questrial', sans-serif;
+}
+.ques-10-wht{
+    font-size: 10px !important;
+    color: white;
     font-family: 'Questrial', sans-serif;
 }
 /*PADDINGS*/
