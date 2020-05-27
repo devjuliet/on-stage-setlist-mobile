@@ -2,33 +2,11 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
-    path: 'login',
-    loadChildren: () => import('./views/login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'register',
-    loadChildren: () => import('./views/register/register.module').then( m => m.RegisterPageModule)
-  },
-  {
-    path: 'profile',
-    loadChildren: () => import('./views/profile/profile.module').then( m => m.ProfilePageModule)
-  },
-  {
-    path: 'options',
-    loadChildren: () => import('./views/options/options.module').then( m => m.OptionsPageModule)
-  },
-  {
-    path: 'playlist',
-    loadChildren: () => import('./views/playlist/playlist.module').then( m => m.PlaylistPageModule)
-  },
-  {
-    path: 'songlist',
-    loadChildren: () => import('./views/songlist/songlist.module').then( m => m.SonglistPageModule)
-  }
-
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', loadChildren: () => import('./views/login/login.module').then(m => m.LoginPageModule) },
+  { path: 'register', loadChildren: () => import('./views/register/register.module').then(m => m.RegisterPageModule) },
+  { path: 'splash-screen', loadChildren: () => import('./views/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule) },
+  { path: 'dashboard', loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardPageModule)},
 ];
 @NgModule({
   imports: [
@@ -36,4 +14,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
