@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'playlist',
     loadChildren: () => import('./views/playlist/playlist.module').then( m => m.PlaylistPageModule)
+  },
+  {
+    path: 'songlist',
+    loadChildren: () => import('./views/songlist/songlist.module').then( m => m.SonglistPageModule)
   }
 
 ];

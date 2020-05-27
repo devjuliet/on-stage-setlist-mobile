@@ -1,8 +1,8 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar color = "moradoMiMyApp">
     <ion-row class="ion-align-items-left">
       <ion-col>
-        <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="90" height="70" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0)">
           <path d="M50.5953 39.4081C49.9031 38.7158 48.7813 38.7151 48.0883 39.4074L39.4065 48.0852C38.7143 48.7772 38.7136 49.8999 39.4058 50.5929C39.7517 50.9388 40.2058 51.1119 40.6596 51.1119C41.1128 51.1119 41.5667 50.9388 41.9126 50.5929L50.5946 41.9149C51.2874 41.2228 51.2874 40.1001 50.5953 39.4081Z" fill="white"/>
           <path d="M83.2136 53.3832C80.3935 501.4167 76.9122 50.2425 73.9 50.2425C72.9207 50.2425 72.127 51.0363 72.127 52.0154V71.0045C70.3808 69.7048 68.1238 68.9179 65.6609 68.9179C60.1375 68.9179 55.644 72.8599 55.644 77.7055C55.644 82.5513 60.1375 86.4933 65.6609 86.4933C71.1808 86.4933 75.6722 82.5513 75.6722 77.7055V53.9573C79.9788 54.7441 84.7592 58.1505 84.7592 61.6243V68.4098C84.7592 69.3889 85.553 70.1828 86.5314 70.1828C87.5105 70.1828 88.3044 69.3889 88.3044 68.4098V61.6243C88.3044 58.5997 86.4965 55.6726 83.2136 53.3832ZM65.6609 82.9482C62.0931 82.9482 59.1899 80.5964 59.1899 77.7055C59.1899 74.8148 62.0931 72.463 65.6609 72.463C69.2267 72.463 72.127 74.8148 72.127 77.7055C72.127 80.5964 69.2267 82.9482 65.6609 82.9482Z" fill="white"/>
@@ -18,51 +18,119 @@
           </svg>
         </ion-col>
         <ion-col class = "ion-align-self-center">
-            <ion-title>Playlist</ion-title>
+            <ion-title>Lista de canciones</ion-title>
         </ion-col>  
     </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="background-color : #e9e9e9">
 
-    <!--  Barra del menú de abajo -->
-    <ion-tabs >
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="schedule">
-            <ion-icon name="home"></ion-icon>
-            <ion-label>Home</ion-label>
-            <ion-badge>6</ion-badge>
-            
-          </ion-tab-button>
-      
-          <ion-tab-button tab="speakers">
-            <ion-icon name="person-circle"></ion-icon>
-            <ion-label>Perfíl</ion-label>
-          </ion-tab-button>
-      
-          <ion-tab-button tab="Playlists">
-            <ion-icon name="musical-note"></ion-icon>
-            <ion-label>Listas</ion-label>
-          </ion-tab-button>
-      
-          <ion-tab-button tab="Options">
-            <ion-icon name="options"></ion-icon>
-            <ion-label>Opciones</ion-label>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
+<ion-content [scrollEvents]="true"
+(ionScrollStart)="logScrollStart()"
+(ionScroll)="logScrolling($event)"
+(ionScrollEnd)="logScrollEnd()">
 
      <!-- lista --> 
     <ion-list>
-        <ion-item-sliding>
+
           <ion-item color = "light">
-            <ion-label>Item</ion-label>
+            <img src = "https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP0102-CUSA10785_00-MMXLC1THEME00001/1580202916000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
+            <ion-label>- Mega Man X OST</ion-label>
           </ion-item>
-          <ion-item-options side="end">
-            <ion-item-option (click)="unread(item)">Unread</ion-item-option>
-          </ion-item-options>
-        </ion-item-sliding>
+
+          <ion-item color = "light">
+            <img src = "https://images-na.ssl-images-amazon.com/images/I/81yM0eCnHsL._SY355_.png">
+            <ion-label>- Sonic CD OST (JP)</ion-label>
+          </ion-item>
+
+          <ion-item color = "light">
+              <img src = "https://static-cdn.jtvnw.net/ttv-boxart/Pok%C3%A9mon%20HeartGold%2FSoulSilver.jpg">
+            <ion-label>- Pokémon Heart Gold/Soul Silver OST</ion-label>
+          </ion-item>
+
+          <ion-item color = "light">
+            <img src = "https://images-na.ssl-images-amazon.com/images/I/51PKZS8G1XL._AC_.jpg">
+            <ion-label>- Mario Golf Toadstool Tour OST</ion-label>
+          </ion-item>
+
+          <ion-item color = "light">
+            <img src = "https://img.kbhgames.com/2016/10/Mega-Man-Zero-3.jpg">
+            <ion-label>- Mega Man Zero 2 OST</ion-label>
+          </ion-item>
+
+          <ion-item color = "light">
+            
+            <img src = "https://www.retroplace.com/pics/genesis/packshots/36413--dr-robotnik-and-his-mean-bean-machine.png">
+            <ion-label>- Dr. Robotnik's Mean Bean Machine OST</ion-label>
+          </ion-item>
+
+          <ion-item color = "light">
+            <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
+            <ion-label>-Filler</ion-label>
+          </ion-item>
+
+            <ion-item color = "light">
+              <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
+              <ion-label>-Filler</ion-label>
+            </ion-item> 
+
+          <ion-item color = "light">
+            <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
+            <ion-label>-Filler</ion-label>
+          </ion-item> 
+        
+            <ion-item color = "light">
+              <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
+              <ion-label>-Filler</ion-label>
+            </ion-item>  
+
+              <ion-item color = "light">
+                <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
+                <ion-label>-Filler</ion-label>
+              </ion-item>           
+
+                <ion-item color = "light">
+                  <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
+                  <ion-label>-Filler</ion-label>
+                </ion-item> 
+
+                <ion-item color = "light">
+                  <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
+                  <ion-label>-Filler</ion-label>
+                </ion-item>
+
+                <ion-item color = "light">
+                  <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
+                  <ion-label>-Filler</ion-label>
+                </ion-item>
 
       </ion-list>
-</ion-content>
+
+   <!--  Barra del menú de abajo -->
+   <ion-tabs class = "quietoperro" >
+      <ion-tab-bar slot="bottom" color = "tertiary"> <!-- no logro poner el morado por alguna razón :c -->
+        <ion-tab-button tab="schedule">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+          <ion-badge>6</ion-badge>
+          
+        </ion-tab-button>
+    
+        <ion-tab-button tab="speakers">
+          <ion-icon name="person-circle"></ion-icon>
+          <ion-label>Perfíl</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="Playlists">
+          <ion-icon name="musical-note"></ion-icon>
+          <ion-label>Listas</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="Options">
+          <ion-icon name="options"></ion-icon>
+          <ion-label>Opciones</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+
+    </ion-content>
