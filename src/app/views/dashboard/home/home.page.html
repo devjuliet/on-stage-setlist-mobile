@@ -1,62 +1,41 @@
-
-<ion-content>
-  <h1>Bienvenido</h1>
-
-  <div slot="fixed">
-    <h1><br>"Username"</h1>
+<ion-content style="--background-color : #F6F6F6">
+  <div class ="notification">
+    <ion-button class="noti-btn" (click)="presentModal()">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <h1>Bienvenido</h1>
+      <h1><br>"Username"</h1>
+    </ion-row>
+  </ion-grid>
+  <div class="white-background">
+    <ion-grid>
+      <ion-row>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle class="ques-09-bl">Jueves 14 de Mayo del 2020 <br>16:50 pm </ion-card-subtitle>
+            <ion-card-title class="fira-2-blc">Club de Leones - Chihuahua Chih.</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ques-1-blc">
+            Evento para la caridad para los afectados del COVID-19, Afinar bien las guitarras y llevar cubrebocas. Exito
+            chavales!!
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle class="ques-09-bl">Viernes 22 de Mayo del 2020 <br>12:15 pm </ion-card-subtitle>
+            <ion-card-title class="fira-2-blc">La Taberna del Guacamayo - Mty</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ques-1-blc">
+            El representante de Kemonito nos ha invitado a su evento privado, EXITO!!. Por cierto, Benito Juarez y
+            Kemonito son la misma persona??
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
-
-<ion-content>
-  <ion-grid>
-     <ion-row>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-subtitle>Jueves 14 de Mayo del 2020 <br>16:50 pm </ion-card-subtitle>
-              <ion-card-title>Club de Leones - Chihuahua Chih.</ion-card-title>
-            </ion-card-header>
-          
-            <ion-card-content>
-              Evento para la caridad para los afectados del COVID-19, Afinar bien las guitarras y llevar cubrebocas. Exito chavales!!
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-     </ion-row>
-
-     <ion-row>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-subtitle>Viernes 22 de Mayo del 2020 <br>12:15 pm </ion-card-subtitle>
-              <ion-card-title>La Taberna del Guacamayo - Mty</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              El representante de Kemonito nos ha invitado a su evento privado, EXITO!!. Por cierto, Benito Juarez y Kemonito son la misma persona??
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-     </ion-row>
-
-  </ion-grid>
-</ion-content>
-
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="schedule">
-      <ion-icon name="home-outline"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="person">
-      <ion-icon name="person-circle"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="musical">
-      <ion-icon name="musical-notes-outline"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="setting">
-      <ion-icon name="settings-outline"></ion-icon>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>

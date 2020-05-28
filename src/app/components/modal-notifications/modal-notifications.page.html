@@ -1,9 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>modal-notifications</ion-title>
+  <ion-toolbar class="head-box">
+    <ion-title class="fira-2-bl">Notificaciones</ion-title>
+    <ion-button class="close-btn" (click)="dismiss()"><ion-icon name="close-outline"></ion-icon></ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button (click)="dismiss()">Cerrar modal</ion-button>
+<ion-content style="--background: #FFFFFF;">
+  <ion-grid class="padding-box">
+    <ion-row>
+      <div class="not-box">
+        <ion-label class="ques-1-blc">Esta es una guapa notificación que notifica al usuario.</ion-label>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="not-box">
+        <ion-label class="ques-1-blc">Esta es una guapa notificación que notifica al usuario.</ion-label>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="not-box">
+        <ion-label class="ques-1-blc">Esta es una guapa notificación que notifica al usuario.</ion-label>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="not-box">
+        <ion-label class="ques-1-blc">Esta es una guapa notificación que notifica al usuario.</ion-label>
+      </div>
+    </ion-row>
+  </ion-grid>
 </ion-content>
