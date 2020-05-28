@@ -25,10 +25,13 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+html, body, p{
+    margin: 0;
+}
 
 .sc-ion-input-ios-h, .sc-ion-input-md-h{
     background-color: white;
-    height: 2.5em;
+    height: 2.2em;
     border-radius: 10px;
     font-family: 'Questrial', sans-serif;
     color: #353535;
@@ -37,6 +40,15 @@
     margin: auto;
     --padding-start: 10px;
     transform: none;
+}
+.text-al{
+    text-align: center;
+}
+.just-cent{
+    justify-content: center;
+}
+.width-100p{
+    width: 100%;
 }
 /*Botones*/
 ion-button {
@@ -47,13 +59,11 @@ ion-button {
     font-family: 'Questrial', sans-serif;
     color: white;
     --border-radius: 20px;
-    height: 50px;
+    height: 40px;
     width: 180px;
     font-size: 1em;
 }
 /*Letras*/
-
-
 .fira-1-wht{
     font-family: 'Fira Sans', sans-serif;
     font-size: 1em;
@@ -64,7 +74,24 @@ ion-button {
     font-size: 1.5em;
     color: white;
 }
-.ques-30-bl{
+.fira-13-blc{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.3em;
+    color: #353535;
+}
+.fira-2-bl{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 2em;
+    color: #382983;
+}
+.ques-1-blc{
+    font-family: 'Questrial', sans-serif;
+    font-size: 1em;
+    color: #353535;
+}
+.ques-09-wht{
+    font-size: .9em;
+    color: white;
     font-family: 'Questrial', sans-serif;
 }
 .ques-10-wht{
@@ -73,7 +100,12 @@ ion-button {
     font-family: 'Questrial', sans-serif;
 }
 /*PADDINGS*/
-
-.p-b-20{
-    padding-bottom: 20px;
+.p-t-2e{
+    padding-top: 2em;
+}
+.p-t-1e{
+    padding-top: 1em;
+}
+.p-b-1e{
+    padding-bottom: 1em;
 }

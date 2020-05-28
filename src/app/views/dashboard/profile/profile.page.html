@@ -1,44 +1,23 @@
-<ion-content style="background-color : #F6F6F6" >
- 
-  <!--  Barra del menú de abajo -->
-  <ion-tabs >
-    <ion-tab-bar slot="bottom" color = "tertiary">
-      <ion-tab-button tab="schedule">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Home</ion-label>
-        <ion-badge>6</ion-badge>
-        
-      </ion-tab-button>
-  
-      <ion-tab-button tab="speakers">
-        <ion-icon name="person-circle"></ion-icon>
-        <ion-label>Perfíl</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="Playlists">
-        <ion-icon name="musical-note"></ion-icon>
-        <ion-label>Listas</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="Options">
-        <ion-icon name="options"></ion-icon>
-        <ion-label>Opciones</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+
+<ion-content style="background-color : #F6F6F6" > 
+
   <ion-button (click)="presentModal()"></ion-button>
+
 <!-- Campanita de notificación -->
   <div class ="notification">
-    <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M39.5684 36.6071C39.4361 36.5193 38.4405 35.8064 37.4437 33.6497C35.613 29.6892 35.2288 24.1101 35.2288 20.1273C35.2288 20.1099 35.2284 20.0928 35.2278 20.0755C35.2078 14.8116 32.1244 10.274 27.7119 8.23805V5.12431C27.7119 2.29874 25.4669 0 22.7072 0H22.2925C19.5329 0 17.2878 2.29874 17.2878 5.12431V8.23786C12.8606 10.2804 9.771 14.8412 9.771 20.1273C9.771 24.1101 9.38674 29.6891 7.55605 33.6497C6.5593 35.8063 5.56377 36.5192 5.43138 36.6071C4.87396 36.8708 4.59915 37.4799 4.7274 38.0972C4.85686 38.7207 5.42692 39.1505 6.04945 39.1505H15.7128C15.7667 42.9366 18.7896 46 22.4999 46C26.2102 46 29.2331 42.9366 29.2871 39.1505H38.9504C39.5728 39.1505 40.143 38.7207 40.2724 38.0972C40.4005 37.4799 40.1258 36.8707 39.5684 36.6071ZM19.9246 5.12431C19.9246 3.78736 20.9869 2.69972 22.2926 2.69972H22.7073C24.013 2.69972 25.0753 3.78736 25.0753 5.12431V7.36294C24.2431 7.18713 23.3817 7.09458 22.4996 7.09458C21.6177 7.09458 20.7565 7.18704 19.9247 7.36271V5.12431H19.9246ZM22.4999 43.3003C20.2435 43.3003 18.403 41.448 18.3495 39.1506H26.6503C26.5969 41.4479 24.7564 43.3003 22.4999 43.3003ZM27.8085 36.4507C27.8083 36.4507 9.05397 36.4507 9.05397 36.4507C9.28207 36.0874 9.51418 35.6759 9.7449 35.211C11.5118 31.6493 12.4078 26.5744 12.4078 20.1273C12.4078 14.4296 16.935 9.79432 22.4995 9.79432C28.064 9.79432 32.5912 14.4296 32.5912 20.1317C32.5912 20.1484 32.5914 20.1649 32.5921 20.1814C32.5971 26.6027 33.4929 31.6594 35.2549 35.211C35.4857 35.676 35.7179 36.0874 35.9459 36.4507H27.8085Z" fill="white"/>
-      </svg>
+    <ion-icon name="notifications-outline"></ion-icon>
   </div>
 <ion-grid>
   <ion-row>
     <!--Banner del perfíl-->
     <div class ="contenedor">
       <div class ="image-cont">
-        <img src ="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png">
+        <div class="text-al">
+          <img src ="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png">
+        </div>
+        <div>
+          <ion-label class="fira-2-bl">Username~~</ion-label>
+        </div>
       </div>
     </div>
   </ion-row>
@@ -46,38 +25,60 @@
   <!--  Fondo blanco  -->
   <ion-row>
     <div class="main-content">
-      <div class ="relevanttext">
-        <ion-label>Username~~</ion-label>
-      </div>
       <div class ="contenedor2">
-        Descripción del usuario
+        <ion-label class="ques-1-blc">Descripción del usuario</ion-label>
       </div>
-      
-      <ion-row>
-        <ion-label>
-          <div class="textoregular">
-            Habilidades musicales
-          </div>
-        </ion-label>
+      <ion-row class="just-cent p-t-2e">
+        <ion-label class="fira-13-blc">Habilidades musicales</ion-label>
       </ion-row>
-    
-    
-      <ion-row>
-        <ion-label >
-          <div class="textoregular">
-            Historial
-          </div>
-          
-        </ion-label>
+        <ion-row class="p-t-2e">
+          <ion-col>
+            <div class="intrument-box">
+                <img src="/assets/images/guitarra.svg">
+                <ion-label class="ques-10-wht width-100p text-al">Guitarra</ion-label>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="intrument-box">
+              <img src="/assets/images/bajo.svg">
+              <ion-label class="ques-10-wht width-100p text-al">Bajo</ion-label>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="intrument-box">
+              <img src="/assets/images/teclado.svg">
+              <ion-label class="ques-10-wht width-100p text-al">Teclado</ion-label>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="intrument-box">
+              <img src="/assets/images/microfono.svg">
+              <ion-label class="ques-10-wht width-100p text-al">Vocalista</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      <ion-row class="just-cent p-t-2e">
+        <ion-label class="fira-13-blc">Historial</ion-label>
       </ion-row>
-
+      <ion-row class="p-t-2e">
+        <div class="history-box">
+          <p class="ques-1-blc">Guitarrista</p>
+          <p class="ques-1-blc">BunnyBanda</p>
+        </div>
+      </ion-row>
+      <ion-row class="p-t-2e">
+        <div class="history-box">
+          <p class="ques-1-blc">Guitarrista</p>
+          <p class="ques-1-blc">BunnyBanda</p>
+        </div>
+      </ion-row>
+      <ion-row class="p-t-2e">
+        <div class="history-box">
+          <p class="ques-1-blc">Guitarrista</p>
+          <p class="ques-1-blc">BunnyBanda</p>
+        </div>
+      </ion-row>
     </div>
-    
   </ion-row>
-
-
 </ion-grid>
-
-
-
 </ion-content>
