@@ -1,0 +1,22 @@
+.padding-box{
+    padding: 1em 2em;
+}
+.not-box{
+    background: #F8F8F8;
+    --background: #F8F8F8;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 1em 0;
+}
+.head-box{
+    --background: #FFFFFF;
+    --border-color: none;
+    padding: 1em;
+}
+.close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    --background: #FFFFFF;
+    color: #353535;
+}

@@ -1,0 +1,22 @@
+.white-background{
+    height: 100%;
+    background-color: #F8F8F8;
+    --background-color: #F8F8F8;
+}
+ion-card{
+    --background-color: #FFFFFF;
+    background-color: white;
+    border-radius: 0 5px 5px 0;
+    border-left: 10px solid #0087D1;
+}
+.notification{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    ion-icon{
+        width: 30px;
+        height: 30px;
+    }
+    
+}

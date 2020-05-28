@@ -51,6 +51,11 @@ html, body, p{
     width: 100%;
 }
 /*Botones*/
+.noti-btn{
+    background-color: transparent;
+    --background-color: transparent;
+    --background: transparent;
+}
 ion-button {
     text-transform: none;
 }
@@ -63,11 +68,26 @@ ion-button {
     width: 180px;
     font-size: 1em;
 }
+.gry-btn{
+    --background: #D7D4E6;
+    color: #353535;
+    font-family: 'Questrial', sans-serif;
+}
+.blu-btn{
+    --background: #0087D1;
+    color: #FFFFFF;
+    font-family: 'Questrial', sans-serif;
+}
 /*Letras*/
 .fira-1-wht{
     font-family: 'Fira Sans', sans-serif;
     font-size: 1em;
     color: white;
+}
+.fira-2-blc{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 2em;
+    color: #353535;
 }
 .fira-15-wht{
     font-family: 'Fira Sans', sans-serif;
@@ -92,6 +112,11 @@ ion-button {
 .ques-09-wht{
     font-size: .9em;
     color: white;
+    font-family: 'Questrial', sans-serif;
+}
+.ques-09-bl{
+    font-size: .9em;
+    color: #382983;
     font-family: 'Questrial', sans-serif;
 }
 .ques-10-wht{
