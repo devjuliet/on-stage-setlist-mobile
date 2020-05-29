@@ -1,16 +1,22 @@
-<ion-content style="--background-color : #F6F6F6">
+<ion-header class="p-b-1e">  
   <div class ="notification">
     <ion-button class="noti-btn" (click)="presentModal()">
       <ion-icon name="notifications-outline"></ion-icon>
     </ion-button>
   </div>
   <ion-grid>
-    <ion-row>
-      <h1>Bienvenido</h1>
-      <h1><br>"Username"</h1>
+    <ion-row class="just-cent">
+      <img class="head-logo" src="/assets/images/logo-wht.svg">
+    </ion-row>
+    <ion-row class="just-cent">
+      <h1 class="fira-15-wht">Bienvenido</h1>
+    </ion-row>
+    <ion-row class="just-cent">
+      <h1 class="fira-15-wht">"Username"</h1>
     </ion-row>
   </ion-grid>
-  <div class="white-background">
+</ion-header>
+<ion-content style="--background: #F6F6F6">
     <ion-grid>
       <ion-row>
         <ion-card>
@@ -37,5 +43,4 @@
         </ion-card>
       </ion-row>
     </ion-grid>
-  </div>
 </ion-content>

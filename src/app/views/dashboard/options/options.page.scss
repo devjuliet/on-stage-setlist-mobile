@@ -34,9 +34,15 @@
 .hidden{
     display: none;
 }
-ion-segment.ios.hydrated{
+.segment{
     background-color: #877EB4;
+    --background: #877EB4;
+    
 }
-ion-segment-button.ios.in-segment.segment-button-has-label.segment-button-has-label-only.segment-button-layout-icon-top.ion-activatable.ion-activatable-instant.ion-focusable.hydrated.segment-button-checked{
+ion-segment-button{
+    --color-checked: #5F539B;
+    --indicator-box-shadow: none;
     --indicator-color: #5F539B;
+    --background-hover: #5F539B;
+    --background-focused: #5F539B;
 }

@@ -1,155 +1,339 @@
-<ion-header >
-    <ion-toolbar color = "moradoMiMyApp">
-      <ion-row class="ion-align-items-left">
-        <ion-col>
-          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0)">
-            <path d="M33.7304 26.272C33.2689 25.8106 32.521 25.8101 32.059 26.2716L26.2712 32.0568C25.8097 32.5181 25.8092 33.2666 26.2707 33.7286C26.5013 33.9592 26.804 34.0746 27.1066 34.0746C27.4087 34.0746 27.7113 33.9592 27.9419 33.7286L33.7299 27.9432C34.1917 27.4819 34.1917 26.7334 33.7304 26.272Z" fill="white"/>
-            <path d="M55.4759 35.5888C53.5958 34.2778 51.2749 33.495 49.2668 33.495C48.614 33.495 48.0849 34.0242 48.0849 34.6769V47.3364C46.9207 46.4699 45.416 45.9452 43.7741 45.9452C40.0919 45.9452 37.0962 48.5733 37.0962 51.8037C37.0962 55.0342 40.0919 57.6622 43.7741 57.6622C47.454 57.6622 50.4483 55.0342 50.4483 51.8037V35.9715C53.3194 36.496 56.5063 38.767 56.5063 41.0829V45.6066C56.5063 46.2593 57.0355 46.7885 57.6878 46.7885C58.3405 46.7885 58.8697 46.2593 58.8697 45.6066V41.0829C58.8697 39.0664 57.6645 37.115 55.4759 35.5888ZM43.7741 55.2988C41.3956 55.2988 39.4601 53.7309 39.4601 51.8037C39.4601 49.8765 41.3956 48.3087 43.7741 48.3087C46.1513 48.3087 48.0849 49.8765 48.0849 51.8037C48.0849 53.7309 46.1513 55.2988 43.7741 55.2988Z" fill="white"/>
-            <path d="M5.26679 27.0497C8.09209 27.0497 10.3905 25.0145 10.3905 22.5124C10.3905 22.4428 10.3878 22.3737 10.3841 22.3045C10.3882 22.2661 10.3905 22.2267 10.3905 22.1869V12.2374C10.5036 12.2247 10.6176 12.204 10.7311 12.1734L23.5279 8.76857V12.8271C22.7309 12.374 21.7838 12.1098 20.768 12.1098C17.9427 12.1098 15.6447 14.1441 15.6447 16.6439C15.6447 19.146 17.9427 21.1816 20.768 21.1816C23.5933 21.1816 25.8912 19.146 25.8912 16.6439V2.7902C25.8912 2.06877 25.5869 1.42057 25.0554 1.01225C24.5349 0.613087 23.8524 0.487203 23.184 0.665271L10.1236 4.13693C10.1232 4.13739 10.1227 4.13739 10.1223 4.13739C8.92751 4.45691 8.02664 5.64984 8.02664 6.91234V18.6923C7.22922 18.2392 6.28256 17.9746 5.26679 17.9746C2.44148 17.9746 0.143066 20.0102 0.143066 22.5124C0.143066 25.0145 2.44148 27.0497 5.26679 27.0497ZM20.768 18.8179C19.2464 18.8179 18.0081 17.8427 18.0081 16.6444C18.0081 15.4473 19.2464 14.4736 20.768 14.4736C22.29 14.4736 23.5279 15.4473 23.5279 16.6444C23.5279 17.8427 22.29 18.8179 20.768 18.8179ZM10.3901 6.91234C10.3901 6.71459 10.5883 6.46007 10.7316 6.42116L23.5279 3.02V5.92678C23.5279 6.11767 23.325 6.37676 23.1836 6.4143L10.3901 9.81822V6.91234ZM5.26679 20.3385C6.76276 20.3385 8.02664 21.3341 8.02664 22.5124C8.02664 23.6906 6.76276 24.6863 5.26679 24.6863C3.77082 24.6863 2.50695 23.6906 2.50695 22.5124C2.50695 21.3341 3.77082 20.3385 5.26679 20.3385Z" fill="white"/>
-            <path d="M44.8322 28.0036C45.2997 28.0517 45.768 28.0755 46.2353 28.0755C48.6391 28.0755 51.0157 27.4448 53.0949 26.2509C53.5115 26.3909 53.9459 26.4619 54.3808 26.4619C55.407 26.4619 56.4329 26.0719 57.2138 25.2914C57.9687 24.5393 58.3847 23.5345 58.3857 22.4624C58.3861 22.0175 58.3138 21.5845 58.1765 21.1757C59.6024 18.6923 60.2236 15.7846 59.9283 12.9154C59.6061 9.78701 58.2017 6.8372 55.9728 4.60974C53.7435 2.38317 50.7932 0.980139 47.6649 0.658791C44.7952 0.363535 41.8847 0.985175 39.3995 2.4111C38.0021 1.94144 36.3953 2.26142 35.2843 3.37194C34.529 4.12634 34.1133 5.1325 34.1133 6.20458C34.1133 6.64723 34.1856 7.0789 34.322 7.4863C32.8957 9.9692 32.2741 12.877 32.5697 15.7466C32.6129 16.1636 32.6765 16.5775 32.757 16.9872L6.70075 44.4089C4.94387 46.2596 4.95256 49.0977 6.72273 50.8711L7.75407 51.9011C6.53138 56.7959 1.37607 57.0435 1.14353 57.0523C0.493052 57.0733 -0.0182676 57.6167 0.000500568 58.2677C0.0192687 58.9084 0.544321 59.4153 1.18107 59.4153C1.19296 59.4153 1.20441 59.4153 1.21632 59.4148C1.29505 59.4125 3.1705 59.3475 5.19563 58.3889C6.73738 57.6588 8.60688 56.2901 9.62814 53.7725L9.69314 53.8374C10.5821 54.7282 11.7407 55.174 12.9085 55.174C14.0666 55.174 15.2335 54.736 16.1563 53.8585L26.2316 44.2661C26.704 43.8161 26.7228 43.0681 26.2723 42.5952C25.8224 42.1224 25.0744 42.1041 24.6016 42.5541L14.5271 52.146C13.6111 53.0166 12.2227 53.0257 11.3644 52.1662L8.39402 49.2003C7.53663 48.3411 7.54578 46.9513 8.41415 46.0367L33.5461 19.5882C34.2338 21.2457 35.2422 22.7691 36.5262 24.0522C37.8079 25.3335 39.3304 26.3406 40.9875 27.0272L33.7586 33.89C33.7517 33.8964 33.7454 33.9029 33.7384 33.9092L32.3207 35.32C31.8579 35.7801 31.8562 36.5286 32.3161 36.9913C32.5473 37.2234 32.8509 37.3397 33.1544 37.3397C33.4556 37.3397 33.7572 37.2252 33.9879 36.9954L35.3956 35.5947L43.5899 27.8159C44.0001 27.897 44.4143 27.9606 44.8322 28.0036ZM54.302 6.28147C57.6674 9.64511 58.5367 14.788 56.6206 19.0315L41.5451 3.96658C45.7904 2.0513 50.9356 2.91967 54.302 6.28147ZM36.9551 5.04369C37.2755 4.72326 37.6962 4.56349 38.1169 4.56349C38.5381 4.56349 38.9588 4.72326 39.2792 5.04369L55.5443 21.2975C55.8529 21.606 56.0227 22.0189 56.0222 22.4605C56.0218 22.9005 55.8524 23.3111 55.5439 23.6182C54.9026 24.2596 53.8585 24.2596 53.2166 23.6182L36.9551 7.365C36.6466 7.05647 36.4768 6.64449 36.4768 6.20412C36.4768 5.76375 36.6466 5.35177 36.9551 5.04369ZM35.8781 9.63L50.9507 24.6959C46.7064 26.6125 41.5625 25.7441 38.1971 22.3805C34.8297 19.015 33.9604 13.8726 35.8781 9.63Z" fill="white"/>
-            <path d="M30.0421 38.8573C29.5409 38.4397 28.7957 38.507 28.3777 39.0088L28.3612 39.0285C27.9433 39.5302 28.011 40.2754 28.5123 40.6929C28.7333 40.8773 29.0016 40.9671 29.2685 40.9671C29.6067 40.9671 29.9432 40.8219 30.1767 40.5418L30.1936 40.5217C30.6112 40.0204 30.5434 39.2752 30.0421 38.8573Z" fill="white"/>
-            </g>
-            <defs>
-            <clipPath id="clip0">
-            <rect width="60" height="60" fill="white"/>
-            </clipPath>
-            </defs>
-            </svg>
-            
-          </ion-col>
-          <ion-col class = "ion-align-self-center">
-              <ion-title>Lista de canciones</ion-title>
-          </ion-col>  
-      </ion-row>
-    </ion-toolbar>
-  </ion-header>
-  
+<ion-header>
+  <ion-toolbar color="moradoMiMyApp">
+    <ion-row class="ion-align-items-left">
+      <ion-col>
+        <!--GO BACK!!!!!-->
+        <ion-button class="noti-btn">
+          <ion-icon class="color-wht" name="return-up-back-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <!--<ion-col class="p-05-1">
+        <img class="logo-img" src="/assets/images/logo-wht.svg">
+      </ion-col>-->
+      <ion-col class="ion-align-self-center">
+        <ion-title class="fira-15-wht">Lista de canciones</ion-title>
+      </ion-col>
+      <ion-col>
+        <div class="notification">
+          <ion-button class="noti-btn" (click)="presentModal()">
+            <ion-icon class="color-wht" name="notifications-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-header class="album-disp">
+  <ion-row>
+    <ion-col size="4">
+      <div>
+        <img class="album-img"
+          src="https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP0102-CUSA10785_00-MMXLC1THEME00001/1580202916000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
+      </div>
+    </ion-col>
+    <ion-col size="8">
+      <ion-grid>
         <ion-row>
-          <ion-col>
-            <div class="ion-text-center">
-              <img src = "https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP0102-CUSA10785_00-MMXLC1THEME00001/1580202916000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
-            </div>
-            </ion-col>
-          <ion-col>
-            <ion-grid>
-              <ion-row>
-                <ion-col >
-                  <div class = "efe">
-                    <ion-label routerLink="/" routerDirection="root" class="fira-1-wht">Mega Man X OST</ion-label>
-                  </div>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col>
-                  30 canciones
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-col>
+          <ion-label routerLink="/" routerDirection="root" class="fira-13-blc p-b-05 p-t-05">Mega Man X OST</ion-label>
         </ion-row>
+        <ion-row>
+          <ion-label class="ques-07-blc">30 canciones</ion-label>
+        </ion-row>
+      </ion-grid>
+    </ion-col>
+  </ion-row>
+</ion-header>
 
-  <ion-content [scrollEvents]="true"
+
+<ion-content style="--background: #F6F6F6;">
+  <!-- [scrollEvents]="true"
   (ionScrollStart)="logScrollStart()"
   (ionScroll)="logScrolling($event)"
-  (ionScrollEnd)="logScrollEnd()">
+  (ionScrollEnd)="logScrollEnd()">-->
+  <!-- lista -->
+  <ion-list class="album-list">
 
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc"> Central Highway</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
 
-       <!-- lista --> 
-      <ion-list>
-  
-            <ion-item color = "light">
-              <ion-label>- Central Highway</ion-label>
-            </ion-item>
-  
-            <ion-item color = "light">
-              <ion-label>- Chill Penguin</ion-label>
-            </ion-item>
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Chill Penguin</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
 
-            <ion-item color = "light">
-                <ion-label>- Storm Eagle</ion-label>
-            </ion-item>
-    
-            <ion-item color = "light">
-                <ion-label>- Flame Mammoth</ion-label>
-            </ion-item>
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Storm Eagle</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
 
-            <ion-item color = "light">
-              <ion-label>- Boomer Kawanger</ion-label>
-            </ion-item>
-  
-            <ion-item color = "light">
-              <ion-label>- Spark Mandrill</ion-label>
-            </ion-item>
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Flame Mammoth</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
 
-            <ion-item color = "light">
-                <ion-label>-Armored Armadillo</ion-label>
-            </ion-item>
-    
-            <ion-item color = "light">
-                <ion-label>- Launch Octopus</ion-label>
-            </ion-item>
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Boomer Kawanger</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
 
-            <ion-item color = "light">
-                <ion-label>- Sting Chameleon</ion-label>
-              </ion-item>
-    
-              <ion-item color = "light">
-                <ion-label>- VS Maverick</ion-label>
-              </ion-item>
-  
-              <ion-item color = "light">
-                  <ion-label>- Sigma Fortress 1</ion-label>
-              </ion-item>
-      
-              <ion-item color = "light">
-                  <ion-label>- Sigma Fortress 2</ion-label>
-              </ion-item>
-  
-              <ion-item color = "light">
-                <ion-label>- Sigma Fortress 3</ion-label>
-              </ion-item>
-    
-              <ion-item color = "light">
-                <ion-label>- Sigma Fortress 4</ion-label>
-              </ion-item>
-  
-              <ion-item color = "light">
-                  <ion-label>-VS Sigma</ion-label>
-              </ion-item>
-      
-              <ion-item color = "light">
-                  <ion-label>- VS Sigma Phase 2</ion-label>
-              </ion-item>
-              
-              <ion-item color = "light">
-                  <ion-label>- VS Vile</ion-label>
-              </ion-item>
-  
-              <ion-item color = "light">
-                <ion-label>- Ending sequence 1</ion-label>
-              </ion-item>
-    
-              <ion-item color = "light">
-                <ion-label>- Ending sequence 2</ion-label>
-              </ion-item>
-  
-              <ion-item color = "light">
-                  <ion-label>-Credits</ion-label>
-              </ion-item>
-      
-              <ion-item color = "light">
-                  <ion-label>- Title Screen</ion-label>
-              </ion-item>
-  
-              <ion-item color = "light">
-                  <ion-label>- Password Screen</ion-label>
-              </ion-item>              
-  
-              <ion-item color = "light">
-                  <ion-label>- Weapon Get Screen</ion-label>
-              </ion-item>
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Spark Mandrill</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
 
-        </ion-list>
-  
-      </ion-content>
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Armored Armadillo</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Launch Octopus</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Sting Chameleon</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">VS Maverick</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Sigma Fortress 1</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Sigma Fortress 2</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Sigma Fortress 3</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Sigma Fortress 4</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">VS Sigma</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">VS Sigma Phase 2</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">VS Vile</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Ending sequence 1</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Ending sequence 2</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Credits</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Title Screen</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Password Screen</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+        <ion-grid>
+          <ion-row>
+            <div>
+              <ion-label class="ques-1-blc">Weapon Get Screen</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ion-item>
+
+  </ion-list>
+  <div class="song-button-box">
+    <ion-button class="look-song-btn" routerLink="/dashboard/song/1">Comenzar desde el prinicipio! <ion-icon
+        name="play-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+</ion-content>
