@@ -1,11 +1,33 @@
 img{
     height: 50px;
     width: 50px;
-    border-radius: 50%;
-    background-color : #877EB4;
 }
 
 .quietoperro{
     position: -webkit-sticky;
     position: sticky;
+}
+.logo-img{
+    border-radius: 0;
+    background-color: transparent;
+}
+.song-list{
+    --background: #F6F6F6;
+    background: #f6f6f6;
+    height: 100%;
+}
+.song-list ion-item{
+    width: 100%;
+    --background: #f6f6f6;
+    margin: .5em auto;
+}
+.song-list ion-item .song-card{
+    width: 100%;
+    --background: #FFFFFF;
+    background: #FFFFFF;
+    padding: .5em;
+}
+ion-item .item-native{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }

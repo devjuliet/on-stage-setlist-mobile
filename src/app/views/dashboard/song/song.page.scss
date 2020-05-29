@@ -1,0 +1,17 @@
+.choose-view{
+    background: #f6f6f6;
+    --background: #f6f6f6;
+}
+.choose-view ion-segment-button{
+    color: #353535;
+    --color-checked: #382983;
+    --indicator-box-shadow: none;
+    --indicator-color: #382983;
+}
+.choose-view ion-segment-button:hover{
+    color: #353535;
+}
+.next-back-btns{
+    position: sticky;
+    bottom: 0;
+}

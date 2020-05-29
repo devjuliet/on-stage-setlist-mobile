@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ModalNotificationsPage } from 'src/app/components/modal-notifications/modal-notifications.page';
 
 @Component({
   selector: 'app-song',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SongPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
   }
-
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: ModalNotificationsPage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
 }

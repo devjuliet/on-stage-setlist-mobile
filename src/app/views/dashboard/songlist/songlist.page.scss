@@ -1,18 +1,39 @@
-img{
-    height: 120px;
-    width: 120px;
-    background-color : #877EB4;
+.logo-img{
+    height: 50px;
+    width: 50px;
 }
 
-.quietoperro{
-    position: -webkit-sticky;
+.album-disp{
+    background: #f6f6f6;
+    --background: #f6f6f6;
+}
+
+.album-img{
+    width: 100px;
+    height: 100px;
+}
+.album-list{
+    background: #f6f6f6;
+    --background: #f6f6f6;
+}
+.album-list ion-item{
+    width: 90%;
+    margin: .7em auto;
+    background: #FFFFFF;
+    --background: #FFFFFF;
+    --ion-color-base: white !important;
+    --ion-color-shade: none !important;
+}
+.song-button-box{
     position: sticky;
+    bottom: 0;
+    text-align: center;
 }
-
-.perate{
-    height: 144% !important;
-}
-
-.efe{
-    font-size: 24px;
+.look-song-btn{
+    background: #5F539B;
+    --background: #5F539B;
+    height: 40px;
+    color: white;
+    font-family: 'Questrial', sans-serif !important;
+    font-size: 1em;
 }
