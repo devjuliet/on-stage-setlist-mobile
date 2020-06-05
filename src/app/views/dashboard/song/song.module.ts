@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SongPageRoutingModule } from './song-routing.module';
 
 import { SongPage } from './song.page';
+
 
 @NgModule({
   imports: [
@@ -17,4 +18,12 @@ import { SongPage } from './song.page';
   ],
   declarations: [SongPage]
 })
-export class SongPageModule {}
+export class SongPageModule {
+
+  sliderOpts = {
+    zoom: {
+      maxRatio: 5
+    }
+  };
+  
+}

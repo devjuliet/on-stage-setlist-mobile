@@ -38,58 +38,81 @@
   </ion-segment>
 </ion-header>
 <ion-content style="--background: #f6f6f6;">
-  <ion-grid class="p-1e">
-    <ion-row>
-      <ion-label class="ques-1-blc">
-        Antes tú me picheabas (tú me picheabas)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Ahora yo picheo (hmm nah)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Antes tú no querías (no querías)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Ahora yo no quiero (hmm, no)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Antes tú me picheabas (tú me picheabas)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Ahora yo picheo (jaja)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Antes tú no querías (ey)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Ahora yo no quiero
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        No, tranqui
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Yo perreo sola (hmm, ey)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Yo perreo sola (perreo sola, jaja, hmm, hmm)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Yo perreo sola (jaja, hmm, ey)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Yo perreo sola (perreo sola) (okay, okay)
-      </ion-label>
-      <ion-label class="ques-1-blc">
-        Ey, ey, ey
-      </ion-label>
-    </ion-row>
-  </ion-grid>
-  <ion-grid class="p-1e">
-    <img src="https://i.pinimg.com/originals/5b/36/14/5b3614362f019836ba5c8fba4d24cdac.png">
-  </ion-grid>
-  <ion-grid class="p-1e">
-    <img src="https://sites.google.com/site/elmundodelplectro/_/rsrc/1425146689688/acordes/acordes-mas-usuales/acordes-movibles/Acordes%20movibles%20May.png">
-  </ion-grid>
+ 
+
+  <!-- Slider con las vistas de la canción-->
+
+  <ion-slides [options]="sliderOpts" zoom class="rela">
+    <ion-slide>
+      <!--Letra-->
+      <ion-grid class="p-1e">
+        <ion-row>
+          <ion-label class="ques-1-blc">
+            Antes tú me picheabas (tú me picheabas)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Ahora yo picheo (hmm nah)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Antes tú no querías (no querías)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Ahora yo no quiero (hmm, no)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Antes tú me picheabas (tú me picheabas)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Ahora yo picheo (jaja)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Antes tú no querías (ey)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Ahora yo no quiero
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            No, tranqui
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Yo perreo sola (hmm, ey)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Yo perreo sola (perreo sola, jaja, hmm, hmm)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Yo perreo sola (jaja, hmm, ey)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Yo perreo sola (perreo sola) (okay, okay)
+          </ion-label>
+          <ion-label class="ques-1-blc">
+            Ey, ey, ey
+          </ion-label>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide zoom>
+      <!--Partitura-->
+      <ion-grid class="p-1e">
+        <div class = "swiper-zoom-container">  <!--intento de zoom-->
+        <img src="https://i.pinimg.com/originals/5b/36/14/5b3614362f019836ba5c8fba4d24cdac.png">
+        </div>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide zoom>
+      <!--Acordes-->
+      <ion-grid class="p-1e">
+        <div class = "swiper-zoom-container">
+        <img src="https://sites.google.com/site/elmundodelplectro/_/rsrc/1425146689688/acordes/acordes-mas-usuales/acordes-movibles/Acordes%20movibles%20May.png">
+        </div>
+      </ion-grid>
+    </ion-slide>
+
+  </ion-slides>
+  
   <div class="next-back-btns">
     <ion-row class="just-cent">
       <ion-button class="blu-btn"><ion-icon name="caret-back-outline"></ion-icon></ion-button>
