@@ -3,7 +3,7 @@
     <ion-row class="ion-align-items-left">
       <ion-col>
         <!--GO BACK!!!!!-->
-        <ion-button class="noti-btn">
+        <ion-button (click)="goBack()" class="noti-btn">
           <ion-icon class="color-wht" name="return-up-back-outline"></ion-icon>
         </ion-button>
       </ion-col>
@@ -14,12 +14,18 @@
         <ion-title class="fira-15-wht">Lista de canciones</ion-title>
       </ion-col>
       <ion-col>
-        <div class="notification">
+        <!-- <div class="notification">
           <ion-button class="noti-btn" (click)="presentModal()">
             <ion-icon class="color-wht" name="notifications-outline"></ion-icon>
           </ion-button>
+        </div> -->
+        <div class ="notification">
+          <ion-button class="noti-btn" (click)="reloadDataPage()">
+            <ion-icon name="reload-outline"></ion-icon>
+          </ion-button>
         </div>
       </ion-col>
+      
     </ion-row>
   </ion-toolbar>
 </ion-header>
@@ -27,17 +33,17 @@
   <ion-row>
     <ion-col size="4">
       <div>
-        <img class="album-img"
-          src="https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP0102-CUSA10785_00-MMXLC1THEME00001/1580202916000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
+        <img *ngIf="loadedSet.haveImage == false" class="album-img" src="https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP0102-CUSA10785_00-MMXLC1THEME00001/1580202916000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
+        <img *ngIf="loadedSet.haveImage" class="album-img" [src]="loadedSet.imageBlob">
       </div>
     </ion-col>
     <ion-col size="8">
       <ion-grid>
         <ion-row>
-          <ion-label routerLink="/" routerDirection="root" class="fira-13-blc p-b-05 p-t-05">Mega Man X OST</ion-label>
+          <ion-label class="fira-13-blc p-b-05 p-t-05">{{loadedSet.name}}</ion-label>
         </ion-row>
         <ion-row>
-          <ion-label class="ques-07-blc">30 canciones</ion-label>
+          <ion-label class="ques-07-blc">{{loadedSet.numberSongs}} canciones</ion-label>
         </ion-row>
       </ion-grid>
     </ion-col>
@@ -53,285 +59,31 @@
   <!-- lista -->
   <ion-list class="album-list">
 
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+    <ion-item *ngFor="let song of loadedSet.songs; let i = index" color="light">
+      <ion-button class="song-btn" [routerLink]="'/dashboard/song/'+idEvent+'/'+loadedSet.idSet+'/'+song.idSong">
         <ion-grid>
           <ion-row>
             <div>
-              <ion-label class="ques-1-blc"> Central Highway</ion-label>
+              <ion-label class="ques-1-blc">{{song.name}}</ion-label>
             </div>
           </ion-row>
         </ion-grid>
       </ion-button>
     </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
+    <ion-item *ngIf="loadedSet.songs.length == 0" color="light">
         <ion-grid>
           <ion-row>
             <div>
-              <ion-label class="ques-1-blc">Chill Penguin</ion-label>
+              <ion-label class="ques-1-blc">Sin canciones</ion-label>
             </div>
           </ion-row>
         </ion-grid>
-      </ion-button>
     </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Storm Eagle</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Flame Mammoth</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Boomer Kawanger</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Spark Mandrill</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Armored Armadillo</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Launch Octopus</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Sting Chameleon</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">VS Maverick</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Sigma Fortress 1</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Sigma Fortress 2</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Sigma Fortress 3</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Sigma Fortress 4</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">VS Sigma</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">VS Sigma Phase 2</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">VS Vile</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Ending sequence 1</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Ending sequence 2</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Credits</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Title Screen</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Password Screen</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-button class="song-btn" routerLink="/dashboard/song/1">
-        <ion-grid>
-          <ion-row>
-            <div>
-              <ion-label class="ques-1-blc">Weapon Get Screen</ion-label>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ion-item>
-
   </ion-list>
-  <div class="song-button-box">
-    <ion-button class="look-song-btn" routerLink="/dashboard/song/1">Comenzar desde el prinicipio! <ion-icon
+  <div *ngIf="loadedSet.songs.length != 0" class="song-button-box">
+    <ion-button class="look-song-btn" 
+      [routerLink]="'/dashboard/song/'+idEvent+'/'
+        +loadedSet.idSet+'/'+loadedSet.songs[0].idSong">Comenzar desde el prinicipio! <ion-icon
         name="play-outline"></ion-icon>
     </ion-button>
   </div>

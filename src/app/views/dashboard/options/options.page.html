@@ -1,56 +1,61 @@
-<ion-content  style="--background: #F6F6F6">  
+<ion-content style="--background: #F6F6F6">
 
-  <ion-grid >
-    <ion-row >
+  <ion-grid>
+    <ion-row>
       <ion-col class="ion-text-center">
         <ion-text class="fira-2-bl">Ajustes</ion-text>
       </ion-col>
     </ion-row>
-    
-    <div class = "centrito">
-    <ion-row class>
-      <ion-col>
-      <div class ="image-cont">
-        <input class="hidden" type="file" id="myfile" name="myfile">
-        <label for="myfile"><img  class="profile-pic" src ="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png"></label>
-      </div>
-    </ion-col>
-    </ion-row>
+
+    <div class="centrito">
+      <ion-row class>
+        <ion-col>
+          <!-- <div class="image-cont">
+            <input class="hidden" type="file" id="myfile" name="myfile">
+            <label for="myfile">
+              
+              <img class="profile-pic"
+                src="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png"></label>
+          </div> -->
+          <img class="profile-pic" *ngIf="!dataSessionService.user.haveImage" src ="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png">
+          <img class="profile-pic" *ngIf="dataSessionService.user.haveImage" [src]="dataSessionService.user.imageBlob">
+        </ion-col>
+      </ion-row>
     </div>
 
     <ion-row>
       <ion-col>
-        <ion-input placeholder="Nombre(s)..."></ion-input>
+        <ion-input [(ngModel)]="loadedUserData.name" placeholder="Nombre(s)..."></ion-input>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-input placeholder="Nombre de usuario..."></ion-input>
-      </ion-col>
-    </ion-row>    
-
-    <ion-row>
-      <ion-col>
-        <ion-input placeholder="Correo..."></ion-input>
-      </ion-col>
-    </ion-row>  
-
-    <ion-row>
-      <ion-col>
-        <ion-input placeholder="Contraseña..."></ion-input>
-      </ion-col>
-    </ion-row>  
-
-    <ion-row>
-      <ion-col>
-        <ion-input placeholder="Confirmar contraseña..."></ion-input>
+        <ion-input [(ngModel)]="loadedUserData.username" placeholder="Nombre de usuario..."></ion-input>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-input placeholder="Descripción..."></ion-input>
+        <ion-input [(ngModel)]="loadedUserData.email" placeholder="Correo..."></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-input [(ngModel)]="newPassword" placeholder="Contraseña..."></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-input [(ngModel)]="confirmPassword" placeholder="Confirmar contraseña..."></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-input [(ngModel)]="loadedUserData.description" placeholder="Descripción..."></ion-input>
       </ion-col>
     </ion-row>
 
@@ -62,31 +67,36 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-segment class="segment" (ionChange)="segmentChanged($event)">
-        <ion-segment-button value="guit">
-          <img src="/assets/images/guitarra.svg">
-          <ion-label class="ques-10-wht">Guitarra</ion-label>
+      <!-- <ion-segment class="segment" (ionChange)="segmentChanged($event)"> -->
+      <ion-segment [(ngModel)]="loadedUserData.role" class="segment" value="0" (ionChange)="roleChanched($event)">
+        <ion-segment-button selected value="0">
+          <img src="/assets/images/microfono.svg">
+          <ion-label class="ques-10-wht">Vocalista</ion-label>
         </ion-segment-button>
-        <ion-segment-button value="bajo">
-          <img src="/assets/images/bajo.svg">
-          <ion-label class="ques-10-wht">Bajo</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="tec">
+        <ion-segment-button value="1">
           <img src="/assets/images/teclado.svg">
           <ion-label class="ques-10-wht">Teclado</ion-label>
         </ion-segment-button>
-        <ion-segment-button value="mic">
-          <img src="/assets/images/microfono.svg">
-          <ion-label class="ques-10-wht">Vocalista</ion-label>
+        <ion-segment-button value="2">
+          <img src="/assets/images/bajo.svg">
+          <ion-label class="ques-10-wht">Bajo</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="3">
+          <img src="/assets/images/guitarra.svg">
+          <ion-label class="ques-10-wht">Guitarra</ion-label>
         </ion-segment-button>
       </ion-segment>
     </ion-row>
 
     <!--  Cancelar / Guardar -->
-    <ion-row  class="ion-align-items-center jus-ct p-t-2e">
-        <ion-button class="gry-btn">Cancelar</ion-button>
-        <ion-button class="blu-btn">Guardar</ion-button>
+    <ion-row class="ion-align-items-center jus-ct p-t-2e">
+      <ion-button (click)="reloadOriginalData()" class="gry-btn">Cancelar</ion-button>
+      <ion-button (click)="saveData()" class="blu-btn">Guardar</ion-button>
     </ion-row>
-    
+
+    <ion-row class="ion-align-items-center jus-ct p-t-2e">
+      <ion-button (click)="dataSessionService.logOut()" class="gry-btn">Cerrar sesion</ion-button>
+    </ion-row>
+
   </ion-grid>
 </ion-content>

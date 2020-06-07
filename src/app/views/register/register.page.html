@@ -14,31 +14,31 @@
 
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Nombre(s)..."></ion-input>
+          <ion-input [(ngModel)]="name" placeholder="Nombre(s)..."></ion-input>
         </ion-col>
       </ion-row>
 
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Nombre de usuario..."></ion-input>
+          <ion-input [(ngModel)]="username" placeholder="Nombre de usuario..."></ion-input>
         </ion-col>
       </ion-row>
 
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Correo..."></ion-input>
+          <ion-input [(ngModel)]="email" placeholder="Correo..."></ion-input>
         </ion-col>
       </ion-row>
 
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Contraseña..."></ion-input>
+          <ion-input [(ngModel)]="password" type="password" placeholder="Contraseña..."></ion-input>
         </ion-col>
       </ion-row>
 
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Confirmar contraseña..."></ion-input>
+          <ion-input [(ngModel)]="confirmPass" type="password" placeholder="Confirmar contraseña..."></ion-input>
         </ion-col>
       </ion-row>
 
@@ -49,28 +49,28 @@
       </ion-row>
 
       <ion-row>
-        <ion-segment (ionChange)="segmentChanged($event)">
-          <ion-segment-button value="guit">
-            <img src="/assets/images/guitarra.svg">
-            <ion-label class="ques-10-wht">Guitarra</ion-label>
+        <ion-segment value="0" (ionChange)="roleChanched($event)">
+          <ion-segment-button selected value="0">
+            <img src="/assets/images/microfono.svg">
+            <ion-label class="ques-10-wht">Vocalista</ion-label>
           </ion-segment-button>
-          <ion-segment-button value="bajo">
-            <img src="/assets/images/bajo.svg">
-            <ion-label class="ques-10-wht">Bajo</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="tec">
+          <ion-segment-button value="1">
             <img src="/assets/images/teclado.svg">
             <ion-label class="ques-10-wht">Teclado</ion-label>
           </ion-segment-button>
-          <ion-segment-button value="mic">
-            <img src="/assets/images/microfono.svg">
-            <ion-label class="ques-10-wht">Vocalista</ion-label>
+          <ion-segment-button value="2">
+            <img src="/assets/images/bajo.svg">
+            <ion-label class="ques-10-wht">Bajo</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="3">
+            <img src="/assets/images/guitarra.svg">
+            <ion-label class="ques-10-wht">Guitarra</ion-label>
           </ion-segment-button>
         </ion-segment>
       </ion-row>
       <ion-row class="p-t-1e">
         <ion-col class="ion-text-center">
-          <ion-button  routerLink="/login" class="blu-quest">Crear cuenta</ion-button>
+          <ion-button (click)="registerUser()" class="blu-quest">Crear cuenta</ion-button>
         </ion-col>
       </ion-row>
       <ion-row class="p-b-1e">

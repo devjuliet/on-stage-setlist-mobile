@@ -16,12 +16,12 @@
       </ion-row>
       <ion-row>
         <ion-col>
-            <ion-input placeholder="Nombre de usuario..."></ion-input>
+            <ion-input [(ngModel)]="username" placeholder="Nombre de usuario..."></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Contraseña..."></ion-input>
+          <ion-input [(ngModel)]="password" type="password" placeholder="Contraseña..." ></ion-input>
         </ion-col>
       </ion-row>
       <!-- <ion-row>
@@ -31,7 +31,7 @@
       </ion-row> -->
       <ion-row>
         <ion-col class="ion-text-center">
-          <ion-button routerLink="/dashboard/home" class="blu-quest">Iniciar Sesión</ion-button>
+          <ion-button (click)="loginUser()" class="blu-quest">Iniciar Sesión</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>

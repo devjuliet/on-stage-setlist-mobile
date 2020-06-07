@@ -1,144 +1,76 @@
-<ion-header >
-  <ion-toolbar color = "moradoMiMyApp">
+<ion-header>
+  <ion-toolbar color="moradoMiMyApp">
     <ion-row class="ion-align-items-left">
       <ion-col class="p-05-1">
-        <img class="logo-img" src="/assets/images/logo-wht.svg">          
-        </ion-col>
-        <ion-col class = "ion-align-self-center">
-            <ion-title class="fira-15-wht">Lista de canciones</ion-title>
-        </ion-col>  
-        <ion-col>
-          <div class ="notification">
-            <ion-button class="noti-btn" (click)="presentModal()">
-              <ion-icon name="notifications-outline"></ion-icon>
-            </ion-button>
-          </div>
-        </ion-col>
+        <img class="logo-img" src="/assets/images/logo-wht.svg">
+      </ion-col>
+      <ion-col class="ion-align-self-center">
+        <ion-title class="fira-15-wht">Lista de canciones</ion-title>
+      </ion-col>
+      <ion-col>
+        <!-- <div class="notification">
+          <ion-button class="noti-btn" (click)="presentModal()">
+            <ion-icon name="notifications-outline"></ion-icon>
+          </ion-button>
+        </div> -->
+        <div class ="notification">
+          <ion-button class="noti-btn" (click)="reloadDataPage()">
+            <ion-icon name="reload-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content > <!--[scrollEvents]="true"
+<ion-content>
+  <!--[scrollEvents]="true"
 (ionScrollStart)="logScrollStart()"
 (ionScroll)="logScrolling($event)"
 (ionScrollEnd)="logScrollEnd()">-->
-     <!-- lista --> 
-    <ion-list lines="none" class="song-list">
-          <ion-item>
-            <ion-button class="song-btn" routerLink="/dashboard/list/1">
-              <ion-row class="song-card alg-cnt">
-                <img src = "https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP0102-CUSA10785_00-MMXLC1THEME00001/1580202916000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
-                <div class="p-l-1e">
-                  <ion-row>
-                    <ion-label class="ques-1-blc">Mega Man X OST</ion-label>
-                  </ion-row>
-                  <ion-row>
-                    <ion-label class="ques-07-blc">20 canciones</ion-label>
-                  </ion-row>
-                </div>
-                <div>
-                </div>
-              </ion-row>
-            </ion-button>
-          </ion-item>
+<ion-list>
+    <ion-label>Seleccione un evento</ion-label>
+    <ion-select 
+      [(ngModel)]="dataSessionService.eventSelected" 
+      (ionChange)="selectEvent()" value="" okText="Aceptar" cancelText="Cancelar" 
+      [placeholder]="this.dataSessionService.eventSelected.name.length > 0 ? this.dataSessionService.eventSelected.name :'Para ver el repertorio'">
+      <ion-select-option *ngFor="let event of repertoriesAvailable; let i = index" [value]="event">
+        {{event.name}}</ion-select-option>
+    </ion-select>
+</ion-list>
 
-          <ion-item >
-            <ion-button class="song-btn" routerLink="/dashboard/list/1">
-              <ion-row class="song-card alg-cnt">
-                <img src = "https://images-na.ssl-images-amazon.com/images/I/81yM0eCnHsL._SY355_.png">
-                <div class="p-l-1e">
-                  <ion-row>
-                    <ion-label class="ques-1-blc">Sonic CD OST (JP)</ion-label>
-                  </ion-row>
-                  <ion-row>
-                    <ion-label class="ques-07-blc">15 canciones</ion-label>
-                  </ion-row>
-                </div>
-              </ion-row>
-            </ion-button>
-          </ion-item>
-
-          <ion-item>
-            <ion-button class="song-btn" routerLink="/dashboard/list/1">
-            <ion-row class="song-card alg-cnt">
-                <img src = "https://static-cdn.jtvnw.net/ttv-boxart/Pok%C3%A9mon%20HeartGold%2FSoulSilver.jpg">
-                <div class="p-l-1e">
-                  <ion-row>
-                    <ion-label class="ques-1-blc">Pokémon Heart Gold/Soul Silver OST</ion-label>
-                  </ion-row>
-                  <ion-row>
-                    <ion-label class="ques-07-blc">10 canciones</ion-label>
-                  </ion-row>
-                </div>
+  <!-- lista -->
+  <ion-list lines="none" class="song-list">
+    <ion-item *ngIf="dataSessionService.eventSelected.name.length > 0">
+      <ion-row class="p-l-1e">
+        <ion-label class="ques-1-blc">Nombre del repertorio : {{dataSessionService.eventSelected.setlist.nameRepertori}}</ion-label><br>
+        <ion-label class="ques-1-blc">nombre de la banda : {{dataSessionService.eventSelected.nameBand}}</ion-label>
+      </ion-row>
+    </ion-item>
+    <ion-item *ngIf="dataSessionService.eventSelected.name.length == 0">
+      <ion-row class="p-l-1e">
+        <ion-label class="ques-1-blc">Ningun evento seleccionado</ion-label>
+      </ion-row>
+    </ion-item>
+    <ion-item *ngFor="let set of dataSessionService.eventSelected.setlist.sets; let i = index">
+      <ion-button class="song-btn" [routerLink]="'/dashboard/list/'+dataSessionService.eventSelected.idLiveEvent+'/'+set.idSet">
+        <ion-row class="song-card alg-cnt">
+            <img *ngIf="set.haveImage == false" class="profile-pic" src="https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP0102-CUSA10785_00-MMXLC1THEME00001/1580202916000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
+            <img *ngIf="set.haveImage" class="profile-pic" [src]="set.imageBlob">
+          <div class="p-l-1e">
+            <ion-row>
+              <ion-label class="ques-1-blc">{{set.name}}</ion-label>
             </ion-row>
-          </ion-button>
-          </ion-item>
+            <ion-row>
+              <ion-label class="ques-07-blc">{{set.numberSongs}} canciones</ion-label>
+            </ion-row>
+          </div>
+          <div>
+          </div>
+        </ion-row>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
-          <ion-item>
-            <ion-button class="song-btn" routerLink="/dashboard/list/1">
-              <ion-row class="song-card alg-cnt">
-                <img src = "https://images-na.ssl-images-amazon.com/images/I/51PKZS8G1XL._AC_.jpg">
-                <div class="p-l-1e">
-                  <ion-row>
-                    <ion-label class="ques-1-blc">Mario Golf Toadstool Tour OST</ion-label>
-                  </ion-row>
-                  <ion-row>
-                    <ion-label class="ques-07-blc">20 canciones</ion-label>
-                  </ion-row>
-                </div>
-              </ion-row>
-            </ion-button>
-          </ion-item>
-
-          <ion-item>
-            <ion-button class="song-btn" routerLink="/dashboard/list/1">
-              <ion-row class="song-card alg-cnt">
-                <img src = "https://img.kbhgames.com/2016/10/Mega-Man-Zero-3.jpg">
-                <div class="p-l-1e">
-                  <ion-row>
-                    <ion-label class="ques-1-blc">Mega Man Zero 2 OST</ion-label>
-                  </ion-row>
-                  <ion-row>
-                    <ion-label class="ques-07-blc">20 canciones</ion-label>
-                  </ion-row>
-                </div>
-              </ion-row>
-            </ion-button>
-          </ion-item>
-
-          <ion-item>
-            <ion-button class="song-btn" routerLink="/dashboard/list/1">
-              <ion-row class="song-card alg-cnt">
-                <img src = "https://www.retroplace.com/pics/genesis/packshots/36413--dr-robotnik-and-his-mean-bean-machine.png">
-                <div class="p-l-1e">
-                  <ion-row>
-                    <ion-label class="ques-1-blc">Dr. Robotnik's Mean Bean Machine OST</ion-label>
-                  </ion-row>
-                  <ion-row>
-                    <ion-label class="ques-07-blc">20 canciones</ion-label>
-                  </ion-row>
-                </div>
-              </ion-row>
-            </ion-button>
-          </ion-item>
-
-          <ion-item>
-            <ion-button class="song-btn" routerLink="/dashboard/list/1">
-              <ion-row class="song-card alg-cnt">
-                <img src = "https://assets.nacionrex.com/__export/1515916465717/sites/debate/img/2018/01/14/foto_de_portada_perros.jpg_1577178466.jpg">
-                <div class="p-l-1e">
-                  <ion-row>
-                    <ion-label class="ques-1-blc">Filler</ion-label>
-                  </ion-row>
-                  <ion-row>
-                    <ion-label class="ques-07-blc">10 canciones</ion-label>
-                  </ion-row>
-                </div>
-              </ion-row>
-            </ion-button>
-          </ion-item>
-
-      </ion-list>
-
-    </ion-content>
+</ion-content>

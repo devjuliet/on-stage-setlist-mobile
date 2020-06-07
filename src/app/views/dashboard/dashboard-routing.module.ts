@@ -25,11 +25,11 @@ const routes: Routes = [
         loadChildren: () => import('./options/options.module').then(m => m.OptionsPageModule)
       },
       {
-        path: 'list/:id',
+        path: 'list/:idLiveEvent/:idSet',
         loadChildren: () => import('./songlist/songlist.module').then(m => m.SonglistPageModule)
       },
       {
-        path: 'song/:id',
+        path: 'song/:idLiveEvent/:idSet/:idSong',
         loadChildren: () => import('./song/song.module').then(m => m.SongPageModule)
       },
     ]
