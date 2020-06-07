@@ -1,9 +1,14 @@
 
 <ion-content style="background-color : #F6F6F6" > 
 <!-- Campanita de notificación -->
-  <div class ="notification">
+<!--   <div class ="notification">
     <ion-button class="noti-btn" (click)="presentModal()">
       <ion-icon name="notifications-outline"></ion-icon>
+    </ion-button>
+  </div> -->
+  <div class ="notification">
+    <ion-button class="noti-btn" (click)="reloadDataPage()">
+      <ion-icon name="reload-outline"></ion-icon>
     </ion-button>
   </div>
 <ion-grid>
@@ -12,10 +17,11 @@
     <div class ="contenedor" style=" background: url('/assets/images/person-playing-piano-3816115.jpg') 0 0/100% 100% no-repeat;">
       <div class ="image-cont">
         <div class="text-al">
-          <img src ="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png">
+          <img *ngIf="!dataSessionService.user.haveImage" src ="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png">
+          <img *ngIf="dataSessionService.user.haveImage" [src]="dataSessionService.user.imageBlob">
         </div>
         <div>
-          <ion-label class="fira-2-bl">Username~~</ion-label>
+          <ion-label class="fira-2-bl">{{dataSessionService.user.username}}</ion-label>
         </div>
       </div>
     </div>
@@ -25,31 +31,33 @@
   <ion-row>
     <div class="main-content">
       <div class ="contenedor2">
-        <ion-label class="ques-1-blc">Descripción del usuario</ion-label>
+        <ion-label class="ques-1-blc">{{dataSessionService.user.description}}</ion-label>
+        <ion-label *ngIf="dataSessionService.user.description.length == 0" class="ques-1-blc">
+          Aun no tienes una descripcion cuentanos de ti en los <h1 routerLink="/dashboard/settings" routerDirection="root" > ajustes</h1></ion-label>
       </div>
       <ion-row class="just-cent p-t-2e">
         <ion-label class="fira-13-blc">Habilidades musicales</ion-label>
       </ion-row>
         <ion-row class="p-t-2e">
-          <ion-col>
+          <ion-col  *ngIf="dataSessionService.user.role.toString() == '3'">
             <div class="intrument-box">
                 <img src="/assets/images/guitarra.svg">
                 <ion-label class="ques-10-wht width-100p text-al">Guitarra</ion-label>
             </div>
           </ion-col>
-          <ion-col>
+          <ion-col  *ngIf="dataSessionService.user.role.toString() == '2'">
             <div class="intrument-box">
               <img src="/assets/images/bajo.svg">
               <ion-label class="ques-10-wht width-100p text-al">Bajo</ion-label>
             </div>
           </ion-col>
-          <ion-col>
+          <ion-col  *ngIf="dataSessionService.user.role.toString() == '1'">
             <div class="intrument-box">
               <img src="/assets/images/teclado.svg">
               <ion-label class="ques-10-wht width-100p text-al">Teclado</ion-label>
             </div>
           </ion-col>
-          <ion-col>
+          <ion-col *ngIf="dataSessionService.user.role.toString() == '0'">
             <div class="intrument-box">
               <img src="/assets/images/microfono.svg">
               <ion-label class="ques-10-wht width-100p text-al">Vocalista</ion-label>
@@ -59,22 +67,12 @@
       <ion-row class="just-cent p-t-2e">
         <ion-label class="fira-13-blc">Historial</ion-label>
       </ion-row>
-      <ion-row class="p-t-2e">
+      
+      <ion-row *ngFor="let register of dataSessionService.userHistory; let i = index" class="p-t-2e" style="color: black;">
         <div class="history-box">
-          <p class="ques-1-blc">Guitarrista</p>
-          <p class="ques-1-blc">BunnyBanda</p>
-        </div>
-      </ion-row>
-      <ion-row class="p-t-2e">
-        <div class="history-box">
-          <p class="ques-1-blc">Guitarrista</p>
-          <p class="ques-1-blc">BunnyBanda</p>
-        </div>
-      </ion-row>
-      <ion-row class="p-t-2e">
-        <div class="history-box">
-          <p class="ques-1-blc">Guitarrista</p>
-          <p class="ques-1-blc">BunnyBanda</p>
+          <p class="fira-18-blu">{{register.bandName}}</p>
+          <p class="quest-15-grey">{{register.description}}</p>
+          <p class="quest-15-grey">{{utilitiesService.getOnlyDate(register.date)}}</p>
         </div>
       </ion-row>
     </div>

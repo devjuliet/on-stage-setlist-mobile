@@ -1,7 +1,8 @@
 {
   "name": "my-band-mobile-client",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }

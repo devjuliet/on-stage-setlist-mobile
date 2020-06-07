@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">localhost</domain>
+        <domain>localhost</domain>
+        <domain>192.168.1.68</domain>
+        <domain>enbibo.com</domain>
+        <domain>myband-api.enbibo.com</domain>
     </domain-config>
 </network-security-config>

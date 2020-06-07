@@ -1,7 +1,12 @@
 <ion-header class="p-b-1e">  
-  <div class ="notification">
+  <!-- <div class ="notification">
     <ion-button class="noti-btn" (click)="presentModal()">
       <ion-icon name="notifications-outline"></ion-icon>
+    </ion-button>
+  </div> -->
+  <div class ="notification">
+    <ion-button class="noti-btn" (click)="reloadDataPage()">
+      <ion-icon name="reload-outline"></ion-icon>
     </ion-button>
   </div>
   <ion-grid>
@@ -12,33 +17,31 @@
       <h1 class="fira-15-wht">Bienvenido</h1>
     </ion-row>
     <ion-row class="just-cent">
-      <h1 class="fira-15-wht">"Username"</h1>
+      <h1 class="fira-15-wht">"{{dataSessionService.user.name}}"</h1>
     </ion-row>
   </ion-grid>
 </ion-header>
 <ion-content style="--background: #F6F6F6">
     <ion-grid>
       <ion-row>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle class="ques-09-bl">Jueves 14 de Mayo del 2020 <br>16:50 pm </ion-card-subtitle>
-            <ion-card-title class="fira-2-blc">Club de Leones - Chihuahua Chih.</ion-card-title>
-          </ion-card-header>
-          <ion-card-content class="ques-1-blc">
-            Evento para la caridad para los afectados del COVID-19, Afinar bien las guitarras y llevar cubrebocas. Exito
-            chavales!!
-          </ion-card-content>
-        </ion-card>
+        <ion-label class="ques-1-blc">Proximos eventos:</ion-label>
       </ion-row>
-      <ion-row>
+      <ion-row *ngFor="let event of dataSessionService.nextEventsAllData; let i = index" (click)="openRepertorieOfTheEvent(event)">
         <ion-card>
           <ion-card-header>
-            <ion-card-subtitle class="ques-09-bl">Viernes 22 de Mayo del 2020 <br>12:15 pm </ion-card-subtitle>
-            <ion-card-title class="fira-2-blc">La Taberna del Guacamayo - Mty</ion-card-title>
+            <ion-card-subtitle class="ques-09-bl">{{utilitiesService.getOnlyDate(event.date)}}<br>{{utilitiesService.getOnlyTime(event.date)}} </ion-card-subtitle>
+            <ion-card-title class="fira-2-blc">{{event.place}} - {{event.location}}.</ion-card-title>
           </ion-card-header>
           <ion-card-content class="ques-1-blc">
-            El representante de Kemonito nos ha invitado a su evento privado, EXITO!!. Por cierto, Benito Juarez y
-            Kemonito son la misma persona??
+            <p>
+              Tag : {{event.nameTag}}
+            </p>
+            <p>
+              De la banda : {{event.nameBand}}
+            </p>
+            <p>
+              Manager Organiza : {{event.nameManager}}
+            </p>
           </ion-card-content>
         </ion-card>
       </ion-row>

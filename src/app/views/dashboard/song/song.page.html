@@ -1,38 +1,40 @@
 <ion-header>
   <ion-toolbar style="--background: #382983;">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
     <ion-row class="ion-align-items-left">
-
       <ion-col size="2">
         <!--GO BACK!!!!!-->
-        <ion-button class="noti-btn">
+        <ion-button (click)="goBack()" class="noti-btn">
           <ion-icon class="color-wht" name="return-up-back-outline"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col size="10">
         <ion-row class="heig-100p alg-cnt">
-          <ion-label>Nombre de la canción yei!</ion-label>
+          <ion-label>{{loadedSong.name}}</ion-label>
         </ion-row>
       </ion-col>
     </ion-row>
-    <div class="notification">
+    <!-- <div class="notification">
       <ion-button class="noti-btn" (click)="presentModal()">
         <ion-icon class="color-wht" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </div> -->
+    <div class ="notification">
+      <ion-button class="noti-btn" (click)="reloadDataPage()">
+        <ion-icon name="reload-outline"></ion-icon>
       </ion-button>
     </div>
   </ion-toolbar>
 </ion-header>
 <ion-header>
-  <ion-segment class="choose-view" (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="letra">
+  <!-- <ion-segment class="choose-view" (ionChange)="segmentChanged($event)"> -->
+  <ion-segment [(ngModel)]="actualSliderIndex" (ngModelChange)="moveSlide()" class="choose-view">
+    <ion-segment-button value="0" >
       <ion-label>Letra</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="partitura">
+    <ion-segment-button value="1" *ngIf="dataSessionService.user.role.toString() != '0'">
       <ion-label>Partitura</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="acordes">
+    <ion-segment-button value="2" *ngIf="dataSessionService.user.role.toString() != '0'">
       <ion-label>Acordes</ion-label>
     </ion-segment-button>
   </ion-segment>
@@ -42,52 +44,13 @@
 
   <!-- Slider con las vistas de la canción-->
 
-  <ion-slides [options]="sliderOpts" zoom class="rela">
+  <ion-slides #Slider [options]="sliderOpts" zoom class="rela">
     <ion-slide>
       <!--Letra-->
       <ion-grid class="p-1e">
         <ion-row>
           <ion-label class="ques-1-blc">
-            Antes tú me picheabas (tú me picheabas)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Ahora yo picheo (hmm nah)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Antes tú no querías (no querías)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Ahora yo no quiero (hmm, no)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Antes tú me picheabas (tú me picheabas)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Ahora yo picheo (jaja)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Antes tú no querías (ey)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Ahora yo no quiero
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            No, tranqui
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Yo perreo sola (hmm, ey)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Yo perreo sola (perreo sola, jaja, hmm, hmm)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Yo perreo sola (jaja, hmm, ey)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Yo perreo sola (perreo sola) (okay, okay)
-          </ion-label>
-          <ion-label class="ques-1-blc">
-            Ey, ey, ey
+            {{loadedSong.lyric}}
           </ion-label>
         </ion-row>
       </ion-grid>
@@ -97,7 +60,10 @@
       <!--Partitura-->
       <ion-grid class="p-1e">
         <div class = "swiper-zoom-container">  <!--intento de zoom-->
-        <img src="https://i.pinimg.com/originals/5b/36/14/5b3614362f019836ba5c8fba4d24cdac.png">
+          <img *ngIf="haveChords == true" [src]="imageTabs">
+          <div *ngIf="haveTabs == false" >
+            <ion-label class="ques-1-blc">Sin Imagen</ion-label>
+          </div>
         </div>
       </ion-grid>
     </ion-slide>
@@ -106,17 +72,20 @@
       <!--Acordes-->
       <ion-grid class="p-1e">
         <div class = "swiper-zoom-container">
-        <img src="https://sites.google.com/site/elmundodelplectro/_/rsrc/1425146689688/acordes/acordes-mas-usuales/acordes-movibles/Acordes%20movibles%20May.png">
+          <img *ngIf="haveChords == true" [src]="imageChords">
+          <div *ngIf="haveChords == false" >
+            <ion-label  class="ques-1-blc">Sin Imagen</ion-label>
+          </div>
         </div>
       </ion-grid>
     </ion-slide>
 
   </ion-slides>
   
-  <div class="next-back-btns">
+  <div class="next-back-btns" style="z-index: 1;">
     <ion-row class="just-cent">
-      <ion-button class="blu-btn"><ion-icon name="caret-back-outline"></ion-icon></ion-button>
-      <ion-button class="blu-btn"><ion-icon name="caret-forward-outline"></ion-icon></ion-button>
+      <ion-button (click)="loadPrevious()" class="blu-btn"><ion-icon name="caret-back-outline"></ion-icon></ion-button>
+      <ion-button (click)="loadNext()"  class="blu-btn"><ion-icon name="caret-forward-outline"></ion-icon></ion-button>
     </ion-row>
   </div>
 </ion-content>
