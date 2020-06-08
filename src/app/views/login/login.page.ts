@@ -66,6 +66,15 @@ export class LoginPage implements OnInit {
         this.clearData();
         if (response.data.user.type == 2 || response.data.user.type == 0) {
           //Cosas para hacer en caso de que el usuario se loguee correctamente
+          this.dataSessionService.user.idUser = response.data.user.idUser;
+          this.dataSessionService.user.username = response.data.user.username;
+          this.dataSessionService.user.name = response.data.user.name;
+          this.dataSessionService.user.type = response.data.user.type;
+          this.dataSessionService.user.email = response.data.user.email;
+          this.dataSessionService.user.haveImage = response.data.user.haveImage;
+          this.dataSessionService.user.role = response.data.user.role;
+          this.dataSessionService.user.description = response.data.user.description;
+          
           this.utilitiesService.presentToast( "Inicio exitoso", 2000 );
           this.dataSessionService.navigateByUrl("/dashboard/home");
         }else{
