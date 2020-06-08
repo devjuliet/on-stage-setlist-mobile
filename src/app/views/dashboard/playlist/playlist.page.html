@@ -5,7 +5,7 @@
         <img class="logo-img" src="/assets/images/logo-wht.svg">
       </ion-col>
       <ion-col class="ion-align-self-center">
-        <ion-title class="fira-15-wht">Lista de canciones</ion-title>
+        <ion-title class="fira-15-wht p-0">Lista de canciones</ion-title>
       </ion-col>
       <ion-col>
         <!-- <div class="notification">
@@ -29,13 +29,16 @@
 (ionScrollStart)="logScrollStart()"
 (ionScroll)="logScrolling($event)"
 (ionScrollEnd)="logScrollEnd()">-->
-<ion-list>
-    <ion-label>Seleccione un evento</ion-label>
-    <ion-select 
+<ion-list class="choose-list">
+  <ion-row class="disp-fjc">
+    <ion-label class="fira-13-blc">Selecciona un evento</ion-label>
+  </ion-row>
+    
+    <ion-select class="fira-13-blc" 
       [(ngModel)]="dataSessionService.eventSelected" 
       (ionChange)="selectEvent()" value="" okText="Aceptar" cancelText="Cancelar" 
       [placeholder]="this.dataSessionService.eventSelected.name.length > 0 ? this.dataSessionService.eventSelected.name :'Para ver el repertorio'">
-      <ion-select-option *ngFor="let event of repertoriesAvailable; let i = index" [value]="event">
+      <ion-select-option *ngFor="let event of repertoriesAvailable; let i = index" [value]="event" class="ques-1-blc">
         {{event.name}}</ion-select-option>
     </ion-select>
 </ion-list>
@@ -56,7 +59,7 @@
     <ion-item *ngFor="let set of dataSessionService.eventSelected.setlist.sets; let i = index">
       <ion-button class="song-btn" [routerLink]="'/dashboard/list/'+dataSessionService.eventSelected.idLiveEvent+'/'+set.idSet">
         <ion-row class="song-card alg-cnt">
-            <img *ngIf="set.haveImage == false" class="profile-pic" src="https://store.playstation.com/store/api/chihiro/00_09_000/container/MX/es/999/UP0102-CUSA10785_00-MMXLC1THEME00001/1580202916000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000">
+            <img *ngIf="set.haveImage == false" class="profile-pic" src="/assets/images/no-list.png">
             <img *ngIf="set.haveImage" class="profile-pic" [src]="set.imageBlob">
           <div class="p-l-1e">
             <ion-row>

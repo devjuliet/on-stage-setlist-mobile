@@ -66,23 +66,23 @@
         </ion-text>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row class="disp-fjc">
       <!-- <ion-segment class="segment" (ionChange)="segmentChanged($event)"> -->
-      <ion-segment [(ngModel)]="loadedUserData.role" class="segment" value="0" (ionChange)="roleChanched($event)">
+      <ion-segment scrollable [(ngModel)]="loadedUserData.role" class="segment" value="0" (ionChange)="roleChanched($event)">
         <ion-segment-button value="0">
-          <img src="/assets/images/microfono.svg">
+          <img class="img-segm" src="/assets/images/microfono.svg">
           <ion-label class="ques-10-wht">Vocalista</ion-label>
         </ion-segment-button>
         <ion-segment-button value="1">
-          <img src="/assets/images/teclado.svg">
+          <img class="img-segm" src="/assets/images/teclado.svg">
           <ion-label class="ques-10-wht">Teclado</ion-label>
         </ion-segment-button>
         <ion-segment-button value="2">
-          <img src="/assets/images/bajo.svg">
+          <img class="img-segm" src="/assets/images/bajo.svg">
           <ion-label class="ques-10-wht">Bajo</ion-label>
         </ion-segment-button>
         <ion-segment-button value="3">
-          <img src="/assets/images/guitarra.svg">
+          <img class="img-segm" src="/assets/images/guitarra.svg">
           <ion-label class="ques-10-wht">Guitarra</ion-label>
         </ion-segment-button>
       </ion-segment>
@@ -94,8 +94,8 @@
       <ion-button (click)="saveData()" class="blu-btn">Guardar</ion-button>
     </ion-row>
 
-    <ion-row class="ion-align-items-center jus-ct p-t-2e">
-      <ion-button (click)="dataSessionService.logOut()" class="gry-btn">Cerrar sesion</ion-button>
+    <ion-row class="ion-align-items-center jus-ct p-t-2e p-b-1e">
+      <ion-button (click)="dataSessionService.logOut()" class="gry-btn">Cerrar sesion <ion-icon name="exit-outline" class="p-l-05e "></ion-icon></ion-button>
     </ion-row>
 
   </ion-grid>

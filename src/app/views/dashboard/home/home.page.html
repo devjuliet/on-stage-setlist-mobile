@@ -17,14 +17,14 @@
       <h1 class="fira-15-wht">Bienvenido</h1>
     </ion-row>
     <ion-row class="just-cent">
-      <h1 class="fira-15-wht">"{{dataSessionService.user.name}}"</h1>
+      <h1 class="fira-15-wht">{{dataSessionService.user.name}}</h1>
     </ion-row>
   </ion-grid>
 </ion-header>
 <ion-content style="--background: #F6F6F6">
     <ion-grid>
       <ion-row>
-        <ion-label class="ques-1-blc">Proximos eventos:</ion-label>
+        <ion-label class="ques-1-blc p-l-1e">Proximos eventos:</ion-label>
       </ion-row>
       <ion-row *ngFor="let event of dataSessionService.nextEventsAllData; let i = index" (click)="openRepertorieOfTheEvent(event)">
         <ion-card>

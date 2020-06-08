@@ -52,6 +52,10 @@
           <ion-label class="ques-1-blc">
             <div [innerHTML]="loadedSong.lyric"></div>
           </ion-label>
+          <ion-label *ngIf="loadedSong.lyric.length == 0" class="ques-1-blc">
+            <img class="no-img" src="/assets/images/no-song-list.png">
+            sin letra
+          </ion-label>
         </ion-row>
       </ion-grid>
     </ion-slide>
@@ -62,6 +66,7 @@
         <div class = "swiper-zoom-container">  <!--intento de zoom-->
           <img *ngIf="haveChords == true" [src]="imageTabs">
           <div *ngIf="haveTabs == false" >
+            <img class="no-img" src="/assets/images/no-song-list.png">
             <ion-label class="ques-1-blc">Sin Imagen</ion-label>
           </div>
         </div>
@@ -74,6 +79,7 @@
         <div class = "swiper-zoom-container">
           <img *ngIf="haveChords == true" [src]="imageChords">
           <div *ngIf="haveChords == false" >
+            <img class="no-img" src="/assets/images/no-song-list.png">
             <ion-label  class="ques-1-blc">Sin Imagen</ion-label>
           </div>
         </div>
@@ -84,8 +90,8 @@
   
   <div class="next-back-btns" style="z-index: 1;">
     <ion-row class="just-cent">
-      <ion-button (click)="loadPrevious()" class="blu-btn"><ion-icon name="caret-back-outline"></ion-icon></ion-button>
-      <ion-button (click)="loadNext()"  class="blu-btn"><ion-icon name="caret-forward-outline"></ion-icon></ion-button>
+      <ion-button (click)="loadPrevious()" class="blu-btn"><ion-icon name="caret-back-outline"></ion-icon>Anterior</ion-button>
+      <ion-button (click)="loadNext()"  class="blu-btn">Siguiente<ion-icon name="caret-forward-outline"></ion-icon></ion-button>
     </ion-row>
   </div>
 </ion-content>
