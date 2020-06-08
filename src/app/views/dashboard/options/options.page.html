@@ -17,7 +17,7 @@
               <img class="profile-pic"
                 src="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png"></label>
           </div> -->
-          <img class="profile-pic" *ngIf="!dataSessionService.user.haveImage" src ="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png">
+          <img class="profile-pic" *ngIf="!dataSessionService.user.haveImage" src ="/assets/images/avatar.png">
           <img class="profile-pic" *ngIf="dataSessionService.user.haveImage" [src]="dataSessionService.user.imageBlob">
         </ion-col>
       </ion-row>

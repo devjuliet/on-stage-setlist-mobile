@@ -125,7 +125,7 @@ ion-button .button-native {
 }
 .song-btn {
   width: 100%;
-  height: 100%;
+  height: 80px;
   background: transparent;
   --background: transparent;
   margin: 0;
@@ -133,6 +133,9 @@ ion-button .button-native {
   --background-focused: transparent;
   --background-hover: transparent;
   --box-shadow: none;
+  ion-row{
+    height: 100%;
+  }
 }
 .song-btn:focus {
   outline: none;
@@ -185,9 +188,9 @@ ion-button .button-native {
   color: #382983;
   font-family: "Questrial", sans-serif;
 }
-.ques-1-blc {
+.ques-15-blc {
   font-family: "Questrial", sans-serif !important;
-  font-size: 1em !important;
+  font-size: 1.5em !important;
   color: #353535 !important;
 }
 .ques-07-blc {
@@ -233,6 +236,9 @@ ion-button .button-native {
 }
 .p-0{
     padding: 0;
+}
+.p-t-60{
+  padding-top: 60px;
 }
 
 ion-alert {
@@ -306,4 +312,7 @@ ion-alert .alert-radio-label.sc-ion-alert-md {
 }
 ion-alert [aria-checked=true].sc-ion-alert-md .alert-radio-label.sc-ion-alert-md{
     color: #382983;
+}
+ion-tab-bar.ion-color.ion-color-moradoMiMyApp.md.hydrated{
+  color: white;
 }

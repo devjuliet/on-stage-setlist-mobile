@@ -3,6 +3,7 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain>localhost</domain>
         <domain>192.168.1.68</domain>
+        <domain>192.168.1.71</domain>
         <domain>enbibo.com</domain>
         <domain>myband-api.enbibo.com</domain>
     </domain-config>

@@ -15,6 +15,7 @@
 .album-list{
     background: #f6f6f6;
     --background: #f6f6f6;
+    
 }
 .album-list ion-item{
     width: 90%;
@@ -23,7 +24,8 @@
     --background: #FFFFFF;
     --ion-color-base: white !important;
     --ion-color-shade: none !important;
-    --ion-color-contrast: none !important
+    --ion-color-contrast: none !important;
+    border-left: 5px solid #5F539B;
 }
 .song-button-box{
     position: absolute;
