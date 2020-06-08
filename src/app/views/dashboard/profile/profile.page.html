@@ -1,5 +1,5 @@
 
-<ion-content style="background-color : #F6F6F6" > 
+<ion-content style="--background: #F6F6F6" > 
 <!-- Campanita de notificación -->
 <!--   <div class ="notification">
     <ion-button class="noti-btn" (click)="presentModal()">
@@ -14,10 +14,10 @@
 <ion-grid>
   <ion-row>
     <!--Banner del perfíl-->
-    <div class ="contenedor" style=" background: url('/assets/images/person-playing-piano-3816115.jpg') 0 0/100% 100% no-repeat;">
+    <div class ="contenedor" style=" background: url('/assets/images/colors.jpg') 0 0/100% 100% no-repeat;">
       <div class ="image-cont">
         <div class="text-al">
-          <img *ngIf="!dataSessionService.user.haveImage" src ="https://i.pinimg.com/originals/31/e2/79/31e2794f4a3280333ebde8f2169ff040.png">
+          <img *ngIf="!dataSessionService.user.haveImage" src ="/assets/images/avatar.png">
           <img *ngIf="dataSessionService.user.haveImage" [src]="dataSessionService.user.imageBlob">
         </div>
         <div>
@@ -35,10 +35,10 @@
         <ion-label *ngIf="dataSessionService.user.description.length == 0" class="ques-1-blc">
           Aun no tienes una descripcion cuentanos de ti en los <h1 routerLink="/dashboard/settings" routerDirection="root" > ajustes</h1></ion-label>
       </div>
-      <ion-row class="just-cent p-t-2e">
-        <ion-label class="fira-13-blc">Habilidades musicales</ion-label>
+      <ion-row class="just-cent p-t-1e">
+        <ion-label class="fira-13-blc">Habilidad musical</ion-label>
       </ion-row>
-        <ion-row class="p-t-2e">
+        <ion-row class="p-t-1e">
           <ion-col  *ngIf="dataSessionService.user.role.toString() == '3'">
             <div class="intrument-box">
                 <img src="/assets/images/guitarra.svg">
@@ -68,11 +68,11 @@
         <ion-label class="fira-13-blc">Historial</ion-label>
       </ion-row>
       
-      <ion-row *ngFor="let register of dataSessionService.userHistory; let i = index" class="p-t-2e" style="color: black;">
+      <ion-row *ngFor="let register of dataSessionService.userHistory; let i = index" class="p-t-1e" style="color: black;">
         <div class="history-box">
-          <p class="fira-18-blu">{{register.bandName}}</p>
-          <p class="quest-15-grey">{{register.description}}</p>
-          <p class="quest-15-grey">{{utilitiesService.getOnlyDate(register.date)}}</p>
+          <p class="fira-1-bl">{{register.bandName}}</p>
+          <p class="ques-1-blc">{{register.description}}</p>
+          <p class="ques-07-blc">{{utilitiesService.getOnlyDate(register.date)}}</p>
         </div>
       </ion-row>
     </div>
