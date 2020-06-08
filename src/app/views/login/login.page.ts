@@ -15,6 +15,7 @@ export class LoginPage implements OnInit {
 
   constructor(private dataSessionService : DataSessionService, private utilitiesService: UtilitiesService) { }
 
+
   ngOnInit() {
     this.clearData();
     //console.log("init login");
@@ -75,5 +76,5 @@ export class LoginPage implements OnInit {
       });
     }
   }
-
+  
 }
