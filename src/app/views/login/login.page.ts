@@ -41,8 +41,10 @@ export class LoginPage implements OnInit {
   clearData() {
     //this.username = "lupillos.musica";
     //this.password = "lupillos.musica";
-    this.username = "lajenyandrea";
-    this.password = "lajenyandrea";
+    //this.username = "lajenyandrea";
+    //this.password = "lajenyandrea";
+    this.username = "";
+    this.password = "";
   }
 
   validateLoginData(): Boolean {
