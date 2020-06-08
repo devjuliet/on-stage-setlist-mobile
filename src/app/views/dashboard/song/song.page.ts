@@ -99,7 +99,7 @@ export class SongPage implements OnInit {
             this.loadedSong = setFinded.songs.find((song) => {
               return song.idSong == parseInt(this.params.idSong.toString());
             });
-            console.log(this.dataSessionService.user);
+            //console.log(this.dataSessionService.user);
             
             //Vocalista,Teclado,Bajo,Guitarra
             switch (this.dataSessionService.user.role.toString()) {
@@ -150,8 +150,8 @@ export class SongPage implements OnInit {
               this.slider.slideTo(1);
               this.actualSliderIndex = 1;
             }
-            console.log(this.loadedSong);
-            console.log(this.haveChords);
+            //console.log(this.loadedSong);
+            //console.log(this.haveChords);
         }, (errorMessage) => {
 
         });

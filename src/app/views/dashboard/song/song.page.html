@@ -50,7 +50,7 @@
       <ion-grid class="p-1e">
         <ion-row>
           <ion-label class="ques-1-blc">
-            {{loadedSong.lyric}}
+            <div [innerHTML]="loadedSong.lyric"></div>
           </ion-label>
           <ion-label *ngIf="loadedSong.lyric.length == 0" class="ques-1-blc">
             <img class="no-img" src="/assets/images/no-song-list.png">
