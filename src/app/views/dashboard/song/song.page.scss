@@ -12,6 +12,12 @@
     color: #353535;
 }
 .next-back-btns{
-    position: sticky;
+    width: 100%;
+    position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.no-img{
+    opacity: .5;
 }

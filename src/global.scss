@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -25,183 +25,285 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-html, body, p, h1{
-    margin: 0;
+html,
+body,
+p,
+h1 {
+  margin: 0;
 }
 
-.sc-ion-input-ios-h, .sc-ion-input-md-h{
-    background-color: white;
-    height: 2.2em;
-    border-radius: 10px;
-    font-family: 'Questrial', sans-serif;
-    color: #353535;
-    padding-left: .5em !important;
-    width: 80%;
-    margin: auto;
-    --padding-start: 10px;
-    transform: none;
+.sc-ion-input-ios-h,
+.sc-ion-input-md-h {
+  background-color: white;
+  height: 2.2em;
+  border-radius: 10px;
+  font-family: "Questrial", sans-serif;
+  color: #353535;
+  padding-left: 0.5em !important;
+  width: 80%;
+  margin: auto;
+  --padding-start: 10px;
+  transform: none;
 }
-.text-al{
-    text-align: center;
+.text-al {
+  text-align: center;
 }
-.just-cent{
-    justify-content: center;
+.just-cent {
+  justify-content: center;
 }
-.alg-cnt{
-    align-items: center;
+.alg-cnt {
+  align-items: center;
 }
-.width-100p{
-    width: 100%;
+.width-100p {
+  width: 100%;
 }
-.heig-100p{
-    height: 100%;
+.heig-100p {
+  height: 100%;
 }
-.notification{
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    top: 0;
-    ion-icon{
-        width: 30px;
-        height: 30px;
-    }
-    
+.disp-fjc {
+  display: flex;
+  justify-content: center;
 }
-.color-wht{
+.notification {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 60px;
+  ion-icon {
+    width: 30px;
+    height: 30px;
     color: white;
+  }
+}
+.color-wht {
+  color: white;
 }
 /*Botones*/
-.noti-btn{
-    background-color: transparent;
-    --background-color: transparent;
-    --background: transparent;
-    --box-shadow: none !important;
-    --background-hover: transparent;
-    --background-focused: transparent;
-    --background-activated-opacity: 1;
-    --background-focused-opacity: 1;
-    --background-hover-opacity: 1;
-    -transition: none;
-    font-size: 1em;
-    color: white;
+.noti-btn {
+  background-color: transparent;
+  --background-color: transparent;
+  --background: transparent;
+  --box-shadow: none !important;
+  --background-hover: transparent;
+  --background-focused: transparent;
+  --background-activated-opacity: 1;
+  --background-focused-opacity: 1;
+  --background-hover-opacity: 1;
+  -transition: none;
+  font-size: 1em;
+  color: white;
 }
-.noti-btn .button-inner{
-    color: white;
+.noti-btn .button-inner {
+  color: white;
 }
 ion-button {
-    text-transform: none;
+  text-transform: none;
 }
-ion-button .button-native{
-    border: none;
-    box-shadow: none !important;
+ion-button .button-native {
+  border: none;
+  box-shadow: none !important;
 }
-.blu-quest{
-    --background: #0087D1;
-    font-family: 'Questrial', sans-serif;
-    color: white;
-    --border-radius: 20px;
-    height: 40px;
-    width: 180px;
-    font-size: 1em;
+.blu-quest {
+  --background: #0087d1;
+  font-family: "Questrial", sans-serif;
+  color: white;
+  --border-radius: 20px;
+  height: 40px;
+  width: 180px;
+  font-size: 1em;
 }
-.gry-btn{
-    --background: #D7D4E6;
-    color: #353535;
-    font-family: 'Questrial', sans-serif;
+.gry-btn {
+  --background: #d7d4e6;
+  color: #353535;
+  font-family: "Questrial", sans-serif;
 }
-.blu-btn{
-    --background: #0087D1;
-    color: #FFFFFF;
-    font-family: 'Questrial', sans-serif;
+.blu-btn {
+  --background: #0087d1;
+  color: #ffffff;
+  font-family: "Questrial", sans-serif;
 }
-.song-btn{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    --background: transparent;
-    margin: 0;
-    --background-activated: transparent;
-    --background-focused: transparent;
-    --background-hover: transparent;
-    --box-shadow: none;
+.song-btn {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  --background: transparent;
+  margin: 0;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --box-shadow: none;
 }
-.song-btn:focus{
-    outline: none;
+.song-btn:focus {
+  outline: none;
 }
 
 /*Letras*/
-.fira-1-wht{
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 1em;
-    color: white;
+.fira-1-wht {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1em;
+  color: white;
 }
-.fira-2-blc{
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 2em;
-    color: #353535;
+.fira-2-blc {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 2em;
+  color: #353535;
 }
-.fira-15-wht{
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 1.5em;
-    color: white;
+.fira-15-wht {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.5em;
+  color: white;
 }
-.fira-13-blc{
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 1.3em;
-    color: #353535;
+.fira-13-blc {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.3em;
+  color: #353535;
 }
-.fira-2-bl{
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 2em;
-    color: #382983;
+.fira-2-bl {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 2em;
+  color: #382983;
 }
-.ques-1-blc{
-    font-family: 'Questrial', sans-serif !important;
-    font-size: 1em !important;
-    color: #353535 !important;
+.fira-1-bl {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1em;
+  color: #382983;
+  font-weight: 600;
 }
-.ques-09-wht{
-    font-size: .9em;
-    color: white;
-    font-family: 'Questrial', sans-serif;
+.ques-1-blc {
+  font-family: "Questrial", sans-serif !important;
+  font-size: 1em !important;
+  color: #353535 !important;
 }
-.ques-09-bl{
-    font-size: .9em;
-    color: #382983;
-    font-family: 'Questrial', sans-serif;
+.ques-09-wht {
+  font-size: 0.9em;
+  color: white;
+  font-family: "Questrial", sans-serif;
 }
-.ques-07-blc{
-    font-family: 'Questrial', sans-serif !important;
-    font-size: .7em !important;
-    color: #353535 !important;
+.ques-09-bl {
+  font-size: 0.9em;
+  color: #382983;
+  font-family: "Questrial", sans-serif;
 }
-.ques-10-wht{
-    font-size: 10px !important;
-    color: white;
-    font-family: 'Questrial', sans-serif;
+.ques-1-blc {
+  font-family: "Questrial", sans-serif !important;
+  font-size: 1em !important;
+  color: #353535 !important;
+}
+.ques-07-blc {
+  font-family: "Questrial", sans-serif !important;
+  font-size: 0.7em !important;
+  color: #353535 !important;
+}
+.ques-10-wht {
+  font-size: 10px !important;
+  color: white;
+  font-family: "Questrial", sans-serif;
 }
 /*PADDINGS*/
-.p-t-2e{
-    padding-top: 2em;
+.p-t-2e {
+  padding-top: 2em;
 }
-.p-t-1e{
-    padding-top: 1em;
+.p-t-1e {
+  padding-top: 1em;
 }
-.p-b-1e{
-    padding-bottom: 1em;
+.p-b-1e {
+  padding-bottom: 1em;
 }
-.p-t-05{
-    padding-top: .5em;
+.p-t-05 {
+  padding-top: 0.5em;
 }
-.p-b-05{
-    padding-bottom: .5em;
+.p-b-05 {
+  padding-bottom: 0.5em;
 }
-.p-05-1{
-    padding: .5em 1em;
+.p-05-1 {
+  padding: 0.5em 1em;
 }
-.p-l-1e{
+.p-l-05e {
+  padding-left: .5em;
+}
+.p-l-1e {
     padding-left: 1em;
+  }
+.p-r-1e {
+    padding-right: 1em;
+  }
+.p-1e {
+  padding: 1em;
 }
-.p-1e{
-    padding: 1em;
+.p-0{
+    padding: 0;
+}
+
+ion-alert {
+  //background color
+  .alert-head.sc-ion-alert-md {
+    padding: 0 !important;
+  }
+  .alert-wrapper.sc-ion-alert-md {
+    background-color: #ffffff;
+    --background: #ffffff;
+  }
+
+  // Header Text
+  .alert-title.sc-ion-alert-md {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "AustralisProSwash-Italic";
+    color: var(--ion-text-color, #00000080);
+  }
+
+  // checkbox border color
+  [aria-checked="true"].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md {
+    border-color: #00000080;
+  }
+
+  // checkbox or radio button color
+  .alert-radio-inner.sc-ion-alert-md {
+    background-color: #00000080 !important;
+  }
+
+  // wrap the text
+  .alert-radio-label.sc-ion-alert-md {
+    white-space: pre-line !important;
+    font-family: "AustralisProSwash-Italic";
+    color: var(--ion-text-color, #000000b3);
+    font-weight: bold;
+  }
+
+  // Height of text
+  .alert-tappable.sc-ion-alert-md {
+    height: 77px !important;
+  }
+
+  // Checked text color
+  [aria-checked="true"].sc-ion-alert-md .alert-radio-label.sc-ion-alert-md {
+    color: var(--ion-color-step-850, #262626);
+  }
+
+  // Button color
+  .alert-button-inner.sc-ion-alert-md {
+    color: #00000080;
+    font-weight: bold;
+    font-size: small;
+  }
+  .alert-button-group.sc-ion-alert-md {
+    display: flex;
+    justify-content: center;
+  }
+  .alert-button.sc-ion-alert-md {
+    margin: 0;
+  }
+}
+.alert-radio-group.sc-ion-alert-md,
+.alert-checkbox-group.sc-ion-alert-md {
+  border-top: none;
+  border-bottom: 2px solid rgb(108, 97, 158);
+}
+ion-alert .alert-radio-label.sc-ion-alert-md {
+  color: #353535;
+  font-family: "Questrial", sans-serif;
+}
+ion-alert [aria-checked=true].sc-ion-alert-md .alert-radio-label.sc-ion-alert-md{
+    color: #382983;
 }
