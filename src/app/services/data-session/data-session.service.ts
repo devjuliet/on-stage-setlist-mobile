@@ -62,6 +62,8 @@ export class DataSessionService {
               this.user.type = response.data.user.type;
               this.user.email = response.data.user.email;
               this.user.haveImage = response.data.user.haveImage;
+              this.user.role = response.data.user.role;
+              this.user.description = response.data.user.description;
   
               if (this.user.type == 0 || this.user.type == 2) {
                 //Cuando el usuario es valido
@@ -173,7 +175,11 @@ export class DataSessionService {
   logOut() {
     this.storage.set('token', "");
     this.token = "";
-    this.navigateByUrl('/login')
+    this.user = new User();
+    this.nextEventsAllData = [];
+    this.eventSelected = new RepertoriesAllData();
+    this.userHistory = [];
+    this.navigateByUrl('/login');
   }
 
   loginUser(username: String, password: String) {
