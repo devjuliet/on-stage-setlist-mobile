@@ -33,7 +33,10 @@
       <div class ="contenedor2">
         <ion-label class="ques-1-blc">{{dataSessionService.user.description}}</ion-label>
         <ion-label *ngIf="dataSessionService.user.description.length == 0" class="ques-1-blc">
-          Aun no tienes una descripcion cuentanos de ti en los <h1 routerLink="/dashboard/settings" routerDirection="root" > ajustes</h1></ion-label>
+          Aun no tienes una descripcion cuentanos de ti en los </ion-label>
+          <ion-row class="disp-fjc">
+            <ion-button class="blu-btn" routerLink="/dashboard/settings" routerDirection="root" > Ajustes</ion-button>
+          </ion-row>
       </div>
       <ion-row class="just-cent p-t-1e">
         <ion-label class="fira-13-blc">Habilidad musical</ion-label>

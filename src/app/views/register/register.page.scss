@@ -83,3 +83,13 @@ ion-segment-button.ios.in-segment.segment-button-has-label.segment-button-has-la
     width: 100%;
     margin: auto;
 }
+ion-segment-button{
+    --background: #5F539B;
+    --color-checked: #5F539B;
+    --indicator-box-shadow: none;
+    /*--indicator-color: #5F539B;*/
+    --background-hover: #5F539B;
+    --background-focused: #5F539B;
+    --background-checked: #423a6c;
+    padding: 5px 0;
+}
